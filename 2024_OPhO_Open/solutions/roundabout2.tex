@@ -1,0 +1,28 @@
+\begin{solution}
+Using central potential, the effective potential of the particle is
+
+$$V(r) = \frac{L^2}{2mr^2}$$
+
+For some small offset $\delta r$ we can set the following
+
+$$V(d + \delta r) \approx V(d) + \frac{\cos^2\theta}{2}\bigg(\frac{d^2V}{dr^2}\bigg|_{r=d}\bigg)\delta r^2$$
+
+$$\frac{d^2V}{dr^2} = \frac{3L^2}{mr^4}$$
+
+$$\frac{mv^2}{d}\cos\theta = mg\sin\theta\longrightarrow v = \sqrt{gd\tan\theta}$$
+
+$$L = mvd = md\sqrt{gd\tan\theta}$$
+
+$$\frac{d^2V}{dr^2} = \frac{3mg\tan\theta}{d}$$
+
+$$V(d+\delta r) \approx V(d) + \frac{1}{2}\frac{3mg\sin\theta\cos\theta}{d}\delta r^2$$
+
+From this, we retrieve
+
+$$\omega = \sqrt{\frac{3g\sin\theta\cos\theta}{d}}$$
+
+$$T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{2d}{3g\sin2\theta}}$$
+
+This is minimized when $\theta = 45^{\circ}$, so plugging in numbers gives $T_{min} \approx \boxed{3.664\;\mathrm{s}}$
+
+\end{solution}

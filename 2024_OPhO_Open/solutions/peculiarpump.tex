@@ -1,0 +1,32 @@
+\begin{solution}
+Let $N$ be the number of particles in the box as a function of time, and let $T_1$ be the temperature of the box as a function of time. Then effusion gives
+
+\begin{equation}
+    \frac{dN}{dt}=\frac{2AN}{V}\sqrt{\frac{k_BT_1}{2\pi m}}
+\end{equation}
+
+Typically there would be no factor of $2$ and $\frac{dN}{dt}$ would be negative, but $3$ new particles enter the box from the reservoir every time one leaves from the hole. \\
+\\
+We also know that energy leaves the box through the hole through the thermal energy of the leaving gas. A similar process happens to the gas entering from the reservoir. It can be shown that the average energy of a particle effusing out of a small hole is $2kT$, and since the particles coming in from the reservoir are also effusing in, this is the average energy of the incoming and outgoing particles. The rate of gas leaving is $\frac{1}{2}\frac{dN}{dt}$ and the rate of gas entering is $\frac{3}{2}\frac{dN}{dt}$, so
+
+\begin{align}
+    \frac{d}{dt}\left(\frac{3}{2}Nk_BT_1\right)&=\left(\frac{3}{2}\frac{dN}{dt}\right)(2k_BT_2)-\left(\frac{1}{2}\frac{dN}{dt}\right)(2k_BT_1)
+\end{align}
+    Simplifying yields 
+
+    \begin{equation}
+        \frac{dT_1}{dt}=\frac{1}{N}\frac{dN}{dt}\left(2T_2-
+        \frac{5}{3}T_1\right)
+    \end{equation}
+    Plugging in for dN/dt yields
+
+    \begin{equation}
+        \frac{dT_1}{dt}=\frac{A}{V}\sqrt{\frac{k_BT_1}{2\pi m}}\left(4T_2-\frac{10}{3}T_1\right)
+    \end{equation}
+    Integrating this yields
+    \begin{equation}
+        t=(0.007524)\frac{V}{A}\sqrt{\frac{2\pi m}{k_B}}
+    \end{equation}
+    Which, plugging in the numbers, is 0.492 days. 
+    
+\end{solution}

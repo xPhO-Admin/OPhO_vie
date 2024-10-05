@@ -1,0 +1,266 @@
+\documentclass[11pt]{article}
+\usepackage{physoly}
+\usepackage[utf8]{vietnam} % For Vietnamese translation
+\usepackage{multicol}
+\usepackage{wasysym}
+\usepackage{titling}
+\usepackage{epstopdf}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{lipsum}
+% \usepackage[T1]{fontenc}
+\usepackage{siunitx}
+\usepackage{dcolumn, amsmath, amssymb}
+\usepackage[section]{placeins}
+\usepackage{hyperref}
+\setlength{\parskip}{\baselineskip}%
+\usepackage[inline]{asymptote}
+\usepackage{multirow}
+\setlength{\parindent}{0pt}
+\renewcommand{\quote}{\list{}{\rightmargin=\leftmargin\topsep=0pt}\item\relax}
+\usepackage{changepage}   % for the adjustwidth environment
+\usetikzlibrary{positioning,fadings,through}
+
+\definecolor{left} {HTML}{001528}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\usepackage{tikz}
+\tikzset{%
+  3d/.unknown/.code={%
+    \ifx\cx\relax%
+      \let\cx=\pgfkeyscurrentname%
+    \else%
+       \ifx\cy\relax%
+         \let\cy=\pgfkeyscurrentname%
+       \else%
+         \let\cz=\pgfkeyscurrentname%
+       \fi%
+     \fi% 
+    }
+}
+\tikzdeclarecoordinatesystem{3d}{%
+  \let\cx=\relax\let\cy=\relax\let\cz=\relax%
+  \tikzset{3d/.cd,#1}%
+  % Not a proper perspective calculation
+  \pgfmathparse{1.05^(\cx)*1.05^(\cz)}\let\cf=\pgfmathresult%
+  \pgfpointxyz{(\cx)*\cf}{(\cy)*\cf}{(\cz)*\cf}%
+}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\tikzstyle{spring}=[thick,decorate,decoration={zigzag,pre length=0.1cm,post
+  length=0.1cm,segment length=6}]
+\usepackage{subfigure}
+
+\usepackage{tikz}
+\def\width{19}
+\def\hauteur{15}
+\usetikzlibrary{shapes,positioning,intersections,quotes}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Online Physics Olympiad 2024 - Đáp án vòng Open}
+\lhead{Ngày 12 - 14, tháng 8, năm 2024}
+\rfoot{Trang \thepage}
+\title{Đề OPhO}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        
+        \Huge
+        \textbf{2024 Online Physics Olympiad: \\
+        Đáp án vòng Open}
+        
+        \vspace{0.5cm}
+        
+        \begin{center}
+            \includegraphics[width=0.6\linewidth]{OPhO Logo, White BKGD.png}
+        \end{center}
+        \end{center}
+
+
+\section*{Nhà tài trợ}
+
+\vspace{-0.5cm}
+
+Cuộc thi này sẽ không thể thành công nếu thiếu đi sự trợ giúp từ các nhà tài trợ, những người đã đóng góp rất nhiều cho vật lý, toán và giáo dục.
+% This competition could not be possible without the help of our sponsors, who are all doing great things in physics, math, and education.
+\begin{center}
+    \includegraphics[width = 4cm]{sponsors/jane-street.png}\qquad\includegraphics[width = 5cm]{sponsors/wolfram.png}\qquad\includegraphics[width = 5cm]{sponsors/awesome-math.png}\\ 
+    
+    \includegraphics[width=2cm]{sponsors/btbb.png}\qquad\includegraphics[width=2.5cm]{sponsors/physolymp.jpg}\qquad\includegraphics[width=4cm]{sponsors/aops.png}
+\end{center}
+\end{titlepage}
+\newpage
+\section*{Hướng dẫn}
+Nếu bạn muốn yêu cầu làm rõ, vui lòng sử dụng \href{https://forms.gle/adb6hNCrQFhHVvVe6}{biểu mẫu này}. Để xem tất cả các giải thích, xem \href{https://docs.google.com/document/d/1W71dFM-XDmuTxXJ_MJ3QfSdE_xxISvIw58FZh1wYEIk/edit}{tài liệu này}.
+\begin{itemize}
+    \item Sử dụng $g=9.8\;\mathrm{m/s^2}$ trong cuộc thi này, \textbf{trừ khi có quy định khác}. Xem bảng hằng số ở trang tiếp theo để biết các hằng số khác.
+    \item Bài kiểm tra này có 35 câu hỏi ngắn. Mỗi bài toán sẽ có ba lần thử.
+    \item Trọng số của mỗi câu hỏi phụ thuộc vào hệ thống chấm điểm của chúng tôi được tìm thấy \href{https://opho.physoly.tech/static/files/rules24.pdf}{ở đây}. Nói đơn giản, các câu hỏi sau có giá trị cao hơn, và tổng số điểm từ một câu hỏi nhất định sẽ giảm theo số lần bạn thử giải bài toán cũng như số đội giải được nó.
+    \item Bất kỳ thành viên nào trong đội đều có thể nộp bài. Việc chia nhỏ công việc hay làm mỗi bài toán cùng nhau là tùy thuộc vào bạn. Lưu ý rằng sau khi bạn đã nộp bài, các đồng đội của bạn phải làm mới trang của họ trước khi họ có thể thấy nó.
+    \item Câu trả lời nên chứa \textbf{ba} chữ số có nghĩa, trừ khi có quy định khác. Tất cả các câu trả lời trong phạm vi \(1\%\) sẽ được chấp nhận.
+    \item Khi nộp câu trả lời bằng ký hiệu khoa học, vui lòng sử dụng dạng số mũ. Nói cách khác, nếu câu trả lời của bạn cho một bài toán là $A\times 10^B$, vui lòng nhập $A\text{e}B$ vào cổng nộp bài.
+    \item Một máy tính cầm tay khoa học hoặc đồ thị tiêu chuẩn \textit{có thể} được sử dụng. Các hệ thống đại số máy tính và công nghệ như Wolfram Alpha hoặc TI Nspire sẽ không cần thiết, nhưng có thể được sử dụng.
+    \item Bạn \textit{được phép} sử dụng Wikipedia hoặc sách trong kỳ thi này. Hỏi xin trợ giúp trên các diễn đàn trực tuyến hoặc từ giáo viên của bạn sẽ bị coi là gian lận và có thể dẫn đến việc cấm tham gia các cuộc thi trong tương lai.
+    \item Những người đạt điểm cao nhất từ cuộc thi này sẽ đủ điều kiện tham gia \textit{Cuộc thi Mời của Olympic Vật lý Trực tuyến}, là một kỳ thi theo phong cách olympic. Thông tin thêm sẽ được cung cấp cho những người đủ điều kiện sau khi kết thúc \textit{Cuộc thi Mở}.
+    \item Nói chung, trả lời bằng đơn vị SI (mét, giây, kilogram, watt, v.v.) trừ khi có quy định khác. Vui lòng nhập tất cả các góc bằng độ trừ khi có quy định khác.
+    \item Nếu câu hỏi yêu cầu đưa ra câu trả lời dưới dạng phần trăm và câu trả lời của bạn là ``$x$\%”, vui lòng nhập giá trị $x$ vào biểu mẫu nộp bài.
+    \item Không đặt đơn vị trong câu trả lời của bạn trên cổng nộp bài! Nếu câu trả lời của bạn là ``$x$ mét”, chỉ nhập giá trị $x$ vào cổng nộp bài.
+    \item \textbf{Không truyền đạt thông tin cho bất kỳ ai khác ngoài các thành viên trong đội của bạn trước ngày 25 tháng 8 năm 2024}.
+\end{itemize}
+
+\newpage
+\section*{Danh mục hằng số}
+\begin{multicols}{2}
+\begin{itemize}
+    \item Khối lượng proton, $m_p = 1.67\cdot 10^{-27}\;\mathrm{kg}$
+    \item Khối lượng neutron, $m_n = 1.67 \cdot 10^{-27}\;\mathrm{kg}$
+    \item Khối lượng electron, $m_e = 9.11 \cdot 10^{-31}\;\mathrm{kg}$
+    \item Hằng số Avogadro, $N_0 = 6.02 \cdot 10^{23}\;\mathrm{mol^{-1}}$
+    \item Hằng số khí lý tưởng, $R = 8.31\;\mathrm{J/(mol\cdot K)}$
+    \item Hằng số Boltzmann, $k_B = 1.38\cdot 10^{-23}\;\mathrm{J/K}$
+    \item Điện tích hạt electron, $e = 1.60 \cdot 10^{-19}\;\mathrm{C}$
+    \item 1 electron volt, $1\;\mathrm{eV} = 1.60\cdot 10^{-19}\;\mathrm{J}$
+    \item Vận tốc ánh sáng, $c = 3.00 \cdot 10^8\;\mathrm{m/s}$
+    \item Hằng số hấp dẫn, \[G = 6.67\cdot 10^{-11}\;\mathrm{(N\cdot m^2)/kg^2}\]
+    \item Khối lượng mặt trời
+    \[M_{\odot} = 1.988\cdot 10^{30}\;\mathrm{kg}\]
+    \item Gia tốc trọng trường, $g = 9.8\;\mathrm{m/s^2}$
+    \item 1 đơn vị nguyên tử khối, \[1\;\mathrm{u} = 1.66 \cdot 10^{-27}\;\mathrm{kg} = 931\;\mathrm{MeV/c^2}\]
+    \item Hằng số Planck, 
+        \[h = 6.63 \cdot 10^{-34}\;\mathrm{J\cdot s} = 4.41\cdot 10^{-15}\;\mathrm{eV\cdot s}\]
+    \item Hằng số điện môi của chân không, \[\epsilon_0 = 8.85 \cdot 10^{-12}\;\mathrm{C^2/(N\cdot m^2)}\]
+    \item Hằng số lực Coulomb,
+    \[k = \frac{1}{4\pi\epsilon_0} = 8.99 \cdot 10^9\;\mathrm{(N\cdot m^2)/C^2}\]
+    \item Độ từ thẩm của chân không, \[\mu_0 = 4\pi\cdot 10^{-7}\;\mathrm{T\cdot m/A}\]
+    \item Hằng số từ, 
+    \[ \frac{\mu_0}{4\pi} = 1\cdot 10^{-7}\;\mathrm{(T\cdot m)/A}\]
+    \item Áp suất 1 atmosphere ,
+    \[1\;\mathrm{atm} = 1.01 \cdot 10^5\;\mathrm{N/m^2} = 1.01\cdot 10^5\;\mathrm{Pa}\]
+    \item Hằng số dịch chuyển Wien, $b = 2.9\cdot 10^{-3}\;\mathrm{m\cdot K}$
+    \item Hằng số Stefan-Boltzmann, \[\sigma = 5.67\cdot 10^{-8}\;\mathrm{W/m^2/K^4}\]
+\end{itemize}
+\end{multicols}
+\newpage
+\normalsize
+\begin{center}
+    \Large 
+    \textbf{Problems}
+\end{center}
+
+\input{problems/jaywalking}
+\input{solutions/jaywalking}
+
+\input{problems/ambidexterity}
+\input{solutions/ambidexterity}
+
+\input{problems/ballDrop}
+\input{solutions/ballDrop}
+
+\input{problems/coilfun}
+\input{solutions/coilfun}
+
+\input{problems/intoOrbit}
+\input{solutions/intoOrbit}
+
+\input{problems/roundabout1}
+\input{solutions/roundabout1}
+
+\input{problems/roundabout2}
+\input{solutions/roundabout2}
+
+\input{problems/atomSmasher}
+\input{solutions/atomSmasher}
+
+\input{problems/dyingLight}
+\input{solutions/dyingLight}
+
+\input{problems/motorizedpendulum1}
+\input{solutions/motorizedpendulum1}
+
+\input{problems/motorizedpendulum2}
+\input{solutions/motorizedpendulum2}
+
+\input{problems/motorizedpendulum3}
+\input{solutions/motorizedpendulum3}
+
+\input{problems/gravitational_osc}
+\input{solutions/gravitational_osc}
+
+\input{problems/gravitational_osc2}
+\input{solutions/gravitational_osc2}
+
+\input{problems/gravitational_osc3}
+\input{solutions/gravitational_osc3}
+
+\input{problems/liquidLenses}
+\input{solutions/liquidLenses}
+
+\input{problems/electricSlide}
+\input{solutions/electricSlide}
+
+\input{problems/pingpong1}
+\input{solutions/pingpong1}
+
+\input{problems/pingpong2}
+\input{solutions/pingpong2}
+
+\input{problems/envelopeOfLight}
+\input{solutions/envelopeOfLight}
+
+\input{problems/underTheLamplight}
+\input{solutions/underTheLamplight}
+
+\input{problems/cannonball}
+\input{solutions/cannonball}
+
+\input{problems/filament1.tex}
+\input{solutions/filament1.tex}
+
+\input{problems/filament2.tex}
+\input{solutions/filament2.tex}
+
+\input{problems/A Question of Counting}
+\input{solutions/A Question of Counting}
+
+\input{problems/peculiarpump}
+\input{solutions/peculiarpump}
+
+\input{problems/air-cushion}
+\input{solutions/air-cushion}
+
+\input{problems/soapyOscillator}
+\input{solutions/soapyOscillator}
+
+\input{problems/relativisticscattering}
+\input{solutions/relativisticscattering}
+
+\input{problems/reluctantRoller}
+\input{solutions/reluctantRoller}
+
+\input{problems/solenoid-spring}
+\input{solutions/solenoid-spring}
+
+\input{problems/devilsTrill}
+\input{solutions/devilsTrill}
+
+\input{problems/chess}
+\input{solutions/chess}
+
+\input{problems/conductingSheets}
+
+\input{problems/flappybird}
+\input{solutions/flappybird}
+
+\end{document}
+

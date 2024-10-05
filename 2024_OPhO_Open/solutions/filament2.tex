@@ -1,0 +1,10 @@
+\begin{solution}
+
+Let the two contact points be A and B. We use a superposition argument. Consider the following two scenarios:
+\begin{itemize}
+    \item Inject current $I$ into A and draw out current $I$ uniformly from the surface of the sphere. The current passing through the shell at polar angle $\phi$ is equal to the current leaving the sphere for all polar angles greater than $\phi$, which is $\frac{1+\cos\phi}{2}I$ by consideration of surface area. Then the current density at $\phi$ is $J=\frac{\frac{1+\cos\phi}{2}I}{2\pi r\sin\phi\cdot t}$. Letting $\phi_i=\frac{0.01}{30}$ and $\phi_f=\frac{\pi}{2}-\frac{0.01}{30}$, the voltage between A and B is $$V=\int \mathbf{E}\cdot d\mathbf{l}=\int_{\phi_i}^{\phi_f}\rho J\cdot rd\phi=\int_{\phi_i}^{\phi_f}\frac{\rho I(1+\cos\phi)}{4\pi t\sin\phi}d\phi.$$
+    \item Draw out current $I$ from B and inject current $I$ uniformly into the surface of the sphere. We obtain the same voltage between A and B as in the other scenario.
+\end{itemize}
+Superposing the two scenarios, we have a current distribution that injects current $I$ into A and draws out current $I$ from B, with voltage difference $2V$ between them. Thus, the effective resistance between A and B is $\frac{2V}{I}=2\int_{\phi_i}^{\phi_f}\frac{\rho (1+\cos\phi)}{4\pi t\sin\phi}d\phi=\boxed{266\;\Omega}$.
+
+\end{solution}

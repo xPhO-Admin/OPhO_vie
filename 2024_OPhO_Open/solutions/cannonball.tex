@@ -1,0 +1,28 @@
+\begin{solution}
+Clearly (as $d>h$) if $v$ is high enough, the optimal trajectory to reach $x_{\max}$ is achieved when the launch angle $\alpha=\ang{45}$. Thus we have to first determine whether or not $v$ is high enough.\\
+
+If $\alpha=\ang{45}$ corresponds to the optimal trajectory over the wall, the highest point of the wall $(d,h)$ is at or under the trajectory. The equation of the trajectory is well-known and easy to derive:
+\[y=-\frac{gx^2}{2v^2\cos^2\alpha}+x\tan\alpha\]
+so $\alpha=\ang{45}$ is optimal if
+\[h\leq -\frac{gd^2}{v^2}+d \implies v\geq d\sqrt{\frac{g}{d-h}}=14\;\mathrm{m/s},\]
+which is not true. Thus $\alpha=\ang{45}$ is not optimal.\\
+
+Now clearly the ball cannot go over the wall if $\alpha\leq\ang{45}$. Thus we have to increase the angle which decreases the range as the range is a decreasing function of $\alpha$ when $\alpha>\ang{45}$ which can be seen from the range equation (comes directly from the trajectory equation above):
+\[R=\frac{2v^2\sin\alpha\cos\alpha}{g}=\frac{v^2\sin2\alpha}{g}.\]
+
+Thus the optimal trajectory now is the one that just barely touches the top of the wall for the minimal $\alpha$. I.e. we wish $(d,h)$ to be on the trajectory. If we plug in $(x,y)=(d,h)$ to the trajectory equation and use $1/\cos^2\alpha=1+\tan^2\alpha$ and solve for $\xi\equiv\tan\alpha$ from the quadratic equation that ensues we get two possible roots
+\[\xi_{\pm}=\frac{v^2}{gd}\pm\sqrt{\frac{v^4}{g^2d^2}-\frac{2v^2h}{gd^2}-1}.\]
+As $\xi=\tan\alpha$ and $\tan$ is an increasing function (in our range), we are interested in the smaller root. Thus
+\[\alpha=\arctan{\xi_-}.\]
+Thus the range equation gives us
+\[x_{\max}=\frac{2\xi_-}{1+\xi_-^2}\frac{v^2}{g}.\]
+
+The argument for the minimal distance is essentially the same. The top of the wall still has to be under the trajectory and $\alpha>\ang{45}$ so now we want the maximal $\alpha$ which corresponds to $\xi_+.$ Thus
+\[x_{\min}=\frac{2\xi_+}{1+\xi_+^2}\frac{v^2}{g}.\]
+And hence
+\[x_{\max}-x_{\min}=\frac{2v^2}{g}\left(\frac{\xi_-}{1+\xi_-^2}-\frac{\xi_+}{1+\xi_+^2}\right)\approx\boxed{5.38\;\mathrm{m}}.\]
+
+Note for a full solution (not necessary to get the numerical answer) one should also check if the launch speed given is even high enough to go over the wall at all. This minimal speed is relatively easy to derive (especially using the envelope curve):
+\[v_{\min}=\sqrt{gh+g\sqrt{h^2+d^2}}\approx{12.6}\;\mathrm{m/s}<v,\]
+so the question is well-posed.
+\end{solution}

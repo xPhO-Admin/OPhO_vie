@@ -1,0 +1,18 @@
+\begin{solution}
+The motion can be divided into two regimes: rolling-without slipping, where the frictional force is large enough to counteract the tension, and rolling-with-slipping, which slows the rotation until $\theta$ reaches a maximum. First, let's consider the period where the hoop rolls without slipping. If $F_f$ is the magnitude of the frictional force, we have:
+$$\ddot{x} = r\ddot{\theta} \Longrightarrow \frac{T - F_f}{m} = \frac{Tr\cos\theta + F_f r}{mr^2}\Longrightarrow F_f = \frac{T(1-\cos\theta)}{2}$$
+Because $F_f\leq\mu mg$, rolling without slipping ends at the critical angle $\displaystyle\theta_c = \cos^{-1}\left(1 - \frac{2\mu mg}{T}\right)$. To fully define the initial conditions, we must also find $\dot{\theta}$ at the critical point. Consider the equation of motion for $\theta$ during rolling-without-slipping:
+$$\ddot{\theta} = \dot{\theta}\,\frac{d\dot{\theta}}{d\theta}= \frac{Tr\cos\theta + F_f r}{mr^2} = \frac{T(1+\cos\theta)}{2mr}$$
+$$\Rightarrow \int_{0}^{\theta_c}\dot{\theta}\ d\dot{\theta} = \int_0^{\theta_c}\frac{T(1+\cos(\theta))}{2mr}\ d\theta\Rightarrow \dot{\theta}_c^2 = \frac{T(\theta_c +\sin(\theta_c))}{mr}$$
+
+Now, consider the rolling-with-slipping period. Letting $\theta_m$ be the maximum value of $\theta$ reached, we will use the same trick to compute $\dot{\theta}_m$:
+$$\ddot{\theta} = \dot{\theta}\,\frac{d\dot{\theta}}{d\theta}= \frac{Tr\cos\theta + F_f r}{mr^2} = \frac{T\cos(\theta)}{mr} + \frac{\mu g}{r}$$
+$$\Rightarrow \int_{\theta_c}^{\theta_m}\dot{\theta}\ d\dot{\theta} = \int_{\theta_c}^{\theta_m}\frac{T\cos(\theta)}{mr} + \frac{\mu g}{r}\ d\theta\Rightarrow \frac{\dot{\theta}_{m}^2}{2} - \frac{\dot{\theta}^2_c}{2} = \frac{\mu g(\theta_m - \theta_c)}{r} + \frac{T(\sin(\theta_m) - \sin(\theta_c))}{mr}$$
+$$\Rightarrow \dot{\theta}_{m}^2 =  \frac{2\mu g(\theta_m - \theta_c)}{r} + \frac{T(2\sin(\theta_m) + \theta_c-\sin(\theta_c))}{mr}$$
+For the hoop to stop at $\theta_m$, we must have $\dot{\theta}_{m} = 0$. Thus:
+$$\frac{mr}{T}\dot{\theta}_{m}^2 = \frac{2\mu mg(\theta_m-\theta_c)}{T} + 2\sin(\theta_m) +\theta_c - \sin(\theta_c) = 0$$
+Letting $\displaystyle a = \frac{T}{\mu mg}$:
+$$\Rightarrow \frac{2(\theta_m - \cos^{-1}(1 - 2/a))}{a} + 2\sin(\theta_m) + \cos^{-1}(1-2/a) - \sin(\cos^{-1}(1 - 2/a)) = 0$$
+$$\Rightarrow \theta_m + a\sin(\theta_m) + (a/2 - 1)\cos^{-1}(1-2/a) - \sqrt{a-1} = 0$$
+Next, we graph this implicit function of $\theta_m$ and $a$ (taking care to limit ourselves to the physically relevant region where $\theta_m > \theta_c$). We find that the minimum value of $a$ over all solutions is $\boxed{3.888}$. The equivalent condition $\displaystyle\frac{da}{d\theta_m}=0$ can be used to find the solution without graphing.
+\end{solution}

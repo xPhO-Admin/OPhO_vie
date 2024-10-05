@@ -1,0 +1,46 @@
+\usepackage{etoolbox}
+\usepackage{calc}
+\usepackage{xparse,etoolbox}
+
+\newcommand{\blocktheorem}[1]{%
+  \csletcs{old#1}{#1}% Store \begin
+  \csletcs{endold#1}{end#1}% Store \end
+  \RenewDocumentEnvironment{#1}{o}
+    {\par\addvspace{1.5ex}
+     \noindent\begin{minipage}{\textwidth}
+     \IfNoValueTF{##1}
+       {\csuse{old#1}}
+       {\csuse{old#1}[##1]}}
+    {\csuse{endold#1}
+     \end{minipage}
+     \par\addvspace{1.5ex}}
+}
+
+\usepackage{mdframed}
+\newtheoremstyle{opho}
+  {}
+  {40pt}
+  {}
+  {0pt}
+  {\large \bfseries}
+  {}
+  {0pt}
+  {\noindent\rule{10cm}{0.4pt}\\
+  \thmname{#1}\thmnumber{ #2}.\thmnote{ #3}\newline}
+
+\mdfdefinestyle{myenvs}{%
+  hidealllines=true,%
+  nobreak=true, % comment this to allow breaking
+}
+
+\theoremstyle{opho}
+\newmdtheoremenv[style=myenvs]{problem}{Pr}[section]
+% \newmdtheoremenv[style=myenvs]{theorem}{Theorem}
+
+% \AtBeginEnvironment{problem}{\begin{minipage}{\textwidth}{\vspace*{2\baselineskip}}}
+% \AtEndEnvironment{problem}{\end{minipage}}
+
+% \newtheorem{thm}{Theorem}[subsection]
+\renewcommand{\theproblem}{\arabic{problem}}
+
+% \blocktheorem{problem}

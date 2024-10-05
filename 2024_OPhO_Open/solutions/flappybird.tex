@@ -1,0 +1,50 @@
+\begin{solution}
+Let us start with the first jump, starting at the location $(x_0,y_0)=(0,H)$. Determining the envelope of a projectile launched with velocity
+$V[1]$ is a well-known problem, where the bound of all possible trajectories forms a parabola that satisfies the following equation:
+\begin{equation}
+y_1 = H_{01} - A_{01}x_1^2  \ \ , \ \ \text{in which} \ \  H_{01}=H+\frac{V[1]^2}{2g}  \ \ \text{and} \ \ A_{01}=\frac{g}{2V[1]^2} \ \ .
+\end{equation}
+If the second jump starts at a position $(x_1,y_1)$ on this envelope, then all possible position the bird can reach (at least, before the third jump) can be described by:
+\begin{equation}
+y_2 = \left(y_1 + H_{21} \right) - A_{21}\left(x_2-x_1\right)^2 \ \ , \ \ \text{in which} \ \  H_{21}=\frac{V[2]^2}{2g}  \ \ \text{and} \ \ A_{21}=\frac{g}{2V[2]^2} \ \ .
+\end{equation}
+i.e.
+\[y_2=H_{01}+H_{21}-A_{01}x_1^2-A_{21}(x_2-x_1)^2.\]
+All the points $(x,y)=(x_2,y_2)$ which are reachable within two jumps will have a/multiple respective $x_1$ for which the above equation is fulfilled. The equation is qudratic with respect to $x_1$ so there will exist a respective $x_1$ if the discriminant of the equation (wrt. $x_1$) is non-negative. In standard form the quadratic equation wrt. $x_1$ is
+\[(A_{01}+A_{21})x_1^2-2A_{21}x_2x_1+(y_2+A_{21}x_2^2-H_{01}-H_{21})=0,\]
+so from a non-negative discriminant we get
+\begin{equation}
+\begin{split}
+0 \geq(A_{01}+A_{21})y_2+A_{01}A_{21}x_2^2-(A_{01}+A_{21})(H_{01}+H_{21}) &
+\\
+\Longleftrightarrow \ \ y_2 \leq (H_{01}+H_{21})-\left(A_{01}^{-1}+A_{12}^{-1}\right)^{-1}x_2^2 & \ \ .
+\end{split}
+\end{equation}
+The envelope curve for two jumps is then the one for which the above inequality becomes an equality.\\
+
+We can carry on the procedure inductively for an arbitrary $n$-th jump and get the envelope curve to be
+\[y_n=\left(\sum_{j=1}^{n}H_{j,j-1}\right)-\left(\sum_{j=1}^{n}A_{j,j-1}^{-1}\right)^{-1}x_n^2,\]
+where we can carry on the calculation for $n\rightarrow \infty$ with the Basel summation series:
+\begin{equation}
+\begin{split}
+\sum^{\infty}_{j=1} H_{j,j-1} &= H + \sum^{\infty}_{j=1}\frac{V[j]^2}{2g} = H + \frac{V_0^2}{2g} \sum^{\infty}_{j=1} j^{-2} = H + \frac{\pi^2}{12} \frac{V_0^2}{g} \ \ ,
+\\
+\left( \sum^{\infty}_{j=1} A_{j,j-1}^{-1} \right)^{-1} &= \left( \sum^{\infty}_{j=1} \frac{2V[j]^2}{g} \right)^{-1} = \frac{g}{2V_0^2}\left( \sum^{\infty}_{j=1} j^{-2} \right)^{-1} = \frac{3}{\pi^2} \frac{g}{V_0^2} \ \ .
+\end{split}
+\end{equation}
+i.e. the envelope curve for the tired flappy bird is
+\[y=H+\frac{\pi^2}{12}\frac{V_0^2}{g}-\frac{3}{\pi^2}\frac{g}{V_0^2}x^2.\]
+The furthest (horizontal) distance is the $x$-coordinate ($x=L>0$) where the envelope curve intersects the ground $y=0$:
+\begin{equation}
+\begin{split}
+0&=\left( H + \frac{\pi^2}{12} \frac{V_0^2}{g} \right) - \left( \frac{3}{\pi^2} \frac{g}{V_0^2} \right) L^2
+\\
+\Longrightarrow \ \ L &= \frac{\pi^2}{6} \left(1 + \frac{12}{\pi^2} \frac{gH}{V_0^2} \right)^{1/2} \frac{V_0^2}{g} \approx \boxed{60.32\;\mathrm{m}}.
+\end{split}
+\end{equation}
+\ \ 
+
+
+* This puzzle was created with helps from Long T. Nguyen.
+
+\end{solution}

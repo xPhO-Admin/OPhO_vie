@@ -1,0 +1,13 @@
+\begin{solution}
+
+Since the resistance is small, the flux $\Phi=LI$ remains constant. The given inductance can be written as $L_0=\frac{\mu_0 N^2 \pi r^2}{\ell_0}$, where $N$ is the number of turns and $r$ is the radius. Displace the ring by a small distance $x$. The inductance of the solenoid at this moment is $$L=\frac{\mu_0 N^2\pi r^2}{\ell_0+x}=\frac{L_0}{1+x/\ell_0},$$ so $$I=I_0(1+\frac{x}{\ell_0}).$$
+
+The energy of the system is $E=\frac12 LI^2 + \frac12 kx^2 + \frac12 m\dot{x}^2$. Since the power loss through the resistor is small, we have
+\begin{align*}
+    0=\frac{dE}{dt} &= L_0I_0\dot{I} + kx\dot{x} + m\dot{x}\ddot{x} \\
+    0 &= L_0I_0^2/\ell_0 + kx + m\ddot{x}.
+\end{align*}
+
+From here we read off angular frequency $\omega=\sqrt{\frac{k}{m}}=\boxed{14.1\;\mathrm{rad/s}}.$
+
+\end{solution}

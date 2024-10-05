@@ -1,0 +1,29 @@
+
+
+\begin{solution}
+
+We first transform into the reference frame of the particle. In this frame, it becomes a stationary particle receiving and emitting light isotropically. What frequency of light, we ask? We will perform a Lorentz transformation to find out. Let the x-axis be along the direction of the particle velocity. Setting $c=1$, the wavevector 4-vector in the lab frame is 
+
+$$k^{\mu}=(\omega, \omega  \cos \alpha, -\omega \sin \alpha ) $$
+
+Transforming to the particle frame, the new 4-vector is 
+
+$$k_1^{\mu}=(\omega \gamma (1-v\cos\alpha), ..., ...)$$
+
+The x- and y- components do not matter as we only care about the t-component, which tells us the frequency of the light in the particle frame. So light of frequency $\omega_1=\omega \gamma (1-v\cos\alpha)$ gets scattered into all directions. Consider light that gets scattered into an arbitrary angle $\phi$ from the x-axis. Its 4-vector would be
+
+$$k_2^{\mu}=(\omega_1, \omega_1 \cos \phi, \omega_1 \sin \phi)$$
+
+Transforming this back into the lab frame, the final 4-vector is 
+
+$$k_3^{\mu}=(\omega_1 \gamma (1+v\cos\phi), \omega_1 \gamma (\cos\phi+v), \omega_1 \sin \phi)$$
+
+In the lab frame, the angle $\delta$ between the x-axis and the direction of propagation of $k_3$ is given by
+
+$$\tan \delta = \frac{\sin \phi}{\gamma(\cos\phi+v)}$$
+
+We can start plugging in numbers. We find that $\gamma=1.155$, $\omega_1=5.29\cdot 10^{15} \ \mathrm{Hz}$, and $\tan \delta=0.966$. We can solve for $\phi$, getting back $\phi=70.0^{\circ}$. 
+
+Our answer is therefore $\boxed{\omega'=k_3^0=7.15\cdot 10^{15} \ \mathrm{Hz}}$.
+
+\end{solution}

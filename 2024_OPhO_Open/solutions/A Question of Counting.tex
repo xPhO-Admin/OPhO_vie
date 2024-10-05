@@ -1,0 +1,14 @@
+\begin{solution}
+The key idea is to realize that the 1D probability density function is analogous to the intensity from single slit diffraction. More precisely, let us consider the 1D probability density at a given position $x$ in the plane of the detector. $P = \norm{\Psi_x}^2 = \Psi_x ^{\ast} \Psi_x$ corresponds to taking the square of the norm of summed phasors, which is analogous to optical intensity being the square of the norm of the electric field phasor.
+\newline
+\newline
+This makes our life easier, because we can simply reuse the derivations from classical wave optics! The DeBroglie wavelength of the neutrons is $$\lambda = \frac{h}{p} = \frac{h}{mv} = 601.1\;\mathrm{nm}$$ 
+
+As can be derived using phasors (or simply by reusing the analogous formula from wave optics), we have
+$$\norm{\Psi_x}^2 \propto {\left[\frac {\sin \left(\frac {\pi d \frac{x}{\sqrt{r^2 + x^2}}}{\lambda}\right)}{\left(\frac {\pi d \frac{x}{\sqrt{r^2 + x^2}}}{\lambda}\right)}\right]^2} $$
+We have to be careful to normalize the probability density function when calculating the final result:
+$$P = \frac {\int_{-w/2}^{w/2}\norm{\Psi_x}^2\,dx}{\int_{-\infty}^{\infty}\norm{\Psi_x}^2\,dx} $$
+Plugging in the given parameters, this gives us a final percentage of $$P\times100\% = \boxed{90.2\%}$$
+
+
+\end{solution}

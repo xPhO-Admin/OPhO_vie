@@ -1,0 +1,39 @@
+\begin{solution}
+    Start by looking at a cross section of the liquid through the central axis. Consider a small mass $dm$ of liquid at the surface, a distance $x$ from the axis of rotation. The forces can be balanced as follows:
+
+$$dN\cos{\theta} = gdm$$
+
+$$dN\sin{\theta} = x\omega^2dm$$
+
+$$\tan{\theta} = \frac{dy}{dx} = \frac{x\omega^2}{g}$$
+
+$$\int dy = \int\frac{x\omega^2}{g}dx\longrightarrow y = \frac{x^2\omega^2}{2g}$$
+
+This equation is parabolic, so the liquid forms a paraboloid lens. The focal point can then be calculated as 
+
+$$f = \bigg(0, \frac{g}{2\omega^2}\bigg)$$
+
+Because light is incident vertically, photons will either collide with the lens once or twice.
+
+At the brim of the cylindrical well, the height of the liquid relative to its height at the center of the well is
+
+$$\frac{\omega^2}{2g}$$
+
+The points at which incident photons will collide with the lens twice can now be calculated.
+
+$$y = -\bigg(\frac{\omega^2}{2g} - \frac{g}{2\omega^2}\bigg)x + \frac{g}{2\omega^2}$$
+
+$$y = \frac{x^2\omega^2}{2g}$$
+
+$$\frac{g}{2\omega^2} - \frac{x^2\omega^2}{2g} = \bigg(\frac{\omega^2}{2g} - \frac{g}{2\omega^2}\bigg)x$$
+
+$$\frac{x^2\omega^2}{2g} + \bigg(\frac{\omega^2}{2g} - \frac{g}{2\omega^2}\bigg)x - \frac{g}{2\omega^2} = 0$$
+
+$$x = -1, \frac{g^2}{\omega^4}$$
+
+Any photon initially incident at least $\frac{g^2}{\omega^4}$ away from the central axis will thus hit the mirror twice. The rest of the photons will only hit the mirror once. The value of $n$ can now be calculated.
+
+$$n = 2 - \frac{g^4}{\omega^8} = 2 - \frac{9.8^4}{5^8} \approx \boxed{1.976}$$
+
+
+\end{solution}

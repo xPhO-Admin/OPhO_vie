@@ -1,0 +1,25 @@
+\begin{solution}
+
+When the cushion is squished, since the surface tension of the surface stays the same and the outline of the cushion must be smooth, the sides of the cushion not in contact with the ground or slab form semicircles. Let the radius of the semicircles be $r$. Since the surface maintains a constant surface tension, the gas inside the cushion has an excess pressure of $\Delta P=\frac{\gamma}{r}$ over the outside by Young-Laplace. Let the width of the flat portion of the surface in contact with the ground be $b$ and the flat portion of the surface in contact with the slab be $c$.
+
+Let $N$ be the normal force on the cushion from the ground. Force balance gives the following equations:
+\begin{itemize}
+    \item System of the slab and cushion: $N=mg$.
+    \item Top flat portion of the cushion: $N=c\ell\Delta P$.
+    \item Bottom flat portion of the cushion: $N=b\ell\Delta P$.
+\end{itemize}
+Thus we have $b=c=\frac{mg}{\ell\Delta P}$.
+Volume conservation preserves the area of the cross-section, so we have
+\begin{align*}
+    \pi R^2 &= c\cdot 2r+\pi r^2 \\
+            &= (\pi+\frac{mg}{\gamma\ell})r^2 \\
+    \implies r&=R\sqrt{\frac{\pi}{\pi+\frac{2mg}{\gamma\ell}}}.
+\end{align*}
+The final width is
+\begin{align*}
+    w &= c+2r \\
+      &= (\frac{mg}{\gamma\ell}+2)r \\
+      &= \boxed{0.771\;\mathrm{m}}.
+\end{align*}
+
+\end{solution}

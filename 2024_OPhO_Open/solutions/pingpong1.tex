@@ -1,0 +1,21 @@
+\begin{solution}
+We first find the optimal speed to reach a point $(X,Y)$ in space from the origin $(0,0).$ If the launching angle is $\alpha$ and the launch speed $v$, the kinematic equations for the $x$- and $y$-directions are 
+\begin{align*}
+    x&=vt\cos\alpha & y&=-\frac 12 gt^2+vt\sin\alpha.
+\end{align*}
+Solving for the shape of the trajectory gives
+\[y=-\frac{gx^2}{2v^2\cos^2\alpha}+x\tan\alpha.\]
+If $v$ is large enough, there exists a respective $\alpha$ for which the point $(x,y)=(X,Y)$ satisfies the equation. Now we note that $1/\cos^2\alpha=1+\tan^2\alpha$ which turns the trajectory into a quadratic in $\xi=\tan\alpha$
+\[\xi^2-\frac{2v^2}{gd}\xi+\frac{2v^2h}{gd^2}+1=0.\]
+This has real solutions for $\xi$ if the discriminant is non-negative. If the discriminant is positive, it means there are two angles for the respective speed. This clearly means that the speed is not optimal. Hence we want the discriminant to be zero:
+\[\frac{v^4}{g^2d^2}-\frac{2v^2h}{gd^2}-1=0.\]
+This is a biquadratic in $v$ and solving:
+\[v^2=gY+g\sqrt{X^2+Y^2}\implies v_0=\sqrt{gY+g\sqrt{X^2+Y^2}}.\]
+
+Now, let's get back to the problem at hand. Let $x$ be the distance from the edge of the table at the bouncing point. As the speed is conserved during the bounce, the minimal speed must be such that at the point $x$ the ball can reach both the edge of the table (kinematic trajectories are reversible) and the top of the net (the ball has to go over the net). Using the derived result
+\[v(x)=\max\left\{\sqrt{gh+g\sqrt{h^2+(d-x)^2}},\sqrt{gx}\right\}.\]
+Clearly the first term increases with $x$ and the other term decreases with $x$. Thus the global minimum of $v(x)$ is found at the point where the two terms are equal. This corresponds to
+\[h+\sqrt{h^2+(d-x)^2}=x\implies x=\frac{d^2}{2(d-h)}\]
+and thus
+\[v_1=d\sqrt{\frac{g}{2(d-h)}}\approx2.75\;\mathrm{m/s}.\]
+\end{solution}

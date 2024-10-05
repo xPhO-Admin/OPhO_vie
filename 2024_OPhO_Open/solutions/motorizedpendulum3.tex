@@ -1,0 +1,21 @@
+\begin{solution}
+    The optimal route is to accelerate the mass to $v_{max}$, then as it approaches $\theta=90^{\circ}$, let the mass's kinetic energy carry it to the top while the motor fails to provide enough torque to counteract gravity. 
+
+    We will approximate the answer. Our setup is similar to Motorized Pendulum 1, so the answer to this one should be a small deviation from the answer to that question. Namely, let $\tau_0 = 2mgl-\epsilon $. Near ninety degrees, the torque due to gravity is roughly $mgl$, and the motor's output torque is roughly $\tau_0 \frac{1+\delta}{2}$, where $\delta=90^{\circ} - \theta$ is the distance to the top. 
+
+    We can find the point at which gravity begins to overpower the motor by setting $mgl$ equal to $\tau_0 \frac{1+\delta}{2}$. This happens at 
+    
+    $$\delta=\epsilon/\tau_0 \approx \epsilon/2mgl$$
+    
+    Now, from this point onward, the work done by gravity minus the work done by the motor will be positive, causing the mass to slow down. However, this net work should never be larger than the kinetic energy of the mass, $\frac{1}{2}mv^2$. Approximating the torques from gravity and the motor as lines, the net torque is also a line, and we can therefore calculate how much work is done to slow down the mass from the point at which gravity overpowers the motor to ninety degrees. The net torque is 
+
+    $$mgl-\tau_0 \frac{1+\delta}{2}\approx mgl-2mgl \frac{1+\delta}{2}=-mgl \delta $$
+
+    The area under the graph (i.e. net work) from $\delta=\epsilon/2mgl$ to zero is 
+
+    $$\frac{1}{2} \cdot \epsilon/2mgl \cdot \epsilon/2 = \frac{\epsilon^2}{8mgl} $$
+
+    We can solve for $\epsilon$ by setting this area equal to $\frac{1}{2} mv^2$, resulting in $\epsilon\approx6.6\ Nm$. Therefore, the answer to three significant figures is $\boxed{\tau_0=147.1-6.6=140. \;\mathrm{N\cdot m}}$.
+    
+
+\end{solution}

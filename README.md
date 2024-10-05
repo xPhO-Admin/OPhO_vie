@@ -1,2 +1,1 @@
-# Vietnamese translation of papers in OPhO (Online Physics Olympiads)
-
+# Đề và đáp án OPhO (Online Physics Olympiads) - Bản dịch tiếng Việt

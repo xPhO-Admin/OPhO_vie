@@ -1,29 +1,101 @@
-\newpage
-\begin{solution}
-If we reach a steady state, we can assign a probability $p(x)$ to each cell $x$.
-We can think of probability jumping, instead of the ball jumping.
-So at one step, all the probability in $x$ disappears, and we need some probability jump back into it.\\
+% \newpage
+% \begin{solution}
+% If we reach a steady state, we can assign a probability $p(x)$ to each cell $x$.
+% We can think of probability jumping, instead of the ball jumping.
+% So at one step, all the probability in $x$ disappears, and we need some probability jump back into it.\\
 
-The probability jumping into $x$ is:
+% The probability jumping into $x$ is:
+% \begin{equation*}
+%     p(x) = \sum_{u \in \text{neighbours(x)}} p(u)p(u \rightarrow x)   
+% \end{equation*}
+% Now $p(u\rightarrow x)$ is just $\frac{1}{\text{deg}(u)}$. The degree of a cell, denoted $\text{deg}$ is the number
+% of other cells that can reach it
+% \begin{equation*}
+%     p(x) = \sum_{u \in \text{neighbours(x)}} \frac{p(u)}{\text{deg}(u)}  
+% \end{equation*}
+
+% Here, we can see that if the system reaches a steady state, $p(x)$ will be proportional to $\text{deg}(x)$.
+% So the solution is 
+% \begin{equation*}
+%     p(x) = \frac{\text{deg}(x)}{\sum_u \text{deg}(u)}
+% \end{equation*}
+
+% Which we can check in practice (with something like Mathematica), and it works.
+% \\
+
+% For our $4 \times 4$ grid, the degrees of the cells are:
+
+% \[
+% \begin{matrix}
+% 2 & 3 & 3 & 2 \\
+% 3 & 4 & 4 & 3 \\
+% 3 & 4 & 4 & 3 \\
+% 2 & 3 & 3 & 2
+% \end{matrix}
+% \]
+
+% The probabilities will be proportional to these.\\
+% %The total sum is $52$, and because one particle starts in each cell, we can just multiply it by $16$. This gives 
+% %\[
+% %\frac{x \cdot 16}{52} = \frac{x \cdot 4}{13}
+% %\]
+% %for each \( x \) in the second row. So the expected number of particles in each cell is
+% %\[
+% %\frac{12}{13}, \quad \frac{20}{13}, \quad \frac{20}{13}, \quad \frac{12}{13},
+% %\]
+% % and $A\cdot B\cdot C\cdot D=\left(\frac{12}{13}\cdot\frac{20}{13}\right)^2=\frac{240}{169}\implies \boxed{409}.$
+
+% Now let's find the energies. Denote the energy of cell $i$ as $E_i$. Also, we will denote $\beta = \frac{1}{k_B T}$. 
+% %The probability of begin in that cell is
+
+% %\[
+% %\frac{e^{-\beta E_i}}{\sum_j{e^{-\beta E_j}}}
+% %\]
+
+% %This means that the ratio of probabilities of two states is:
+% By the Boltzmann distribution:
+% \[
+% \frac{p(E_1)}{p(E_2)} = e^{\beta(E_2 - E_1)}
+% \]
+% \[
+% E_2 - E_1 = k_B T \log{\frac{p(E_1)}{p(E_2)}}
+% \]
+
+% This means that the difference in energies is maximized for biggest ratio. Which gives:
+
+% \[
+% \Delta E_{max} = k_B T \log{\frac{4}{2}} = \boxed{5.9728 \cdot 10 ^ {-8}\mathrm{eV}.}
+% \]
+
+
+
+% \end{solution}
+
+\begin{solution}
+Ở trạng thái ổn định, chúng ta có thể gán một xác suất $p(x)$ cho mỗi ô $x$.
+Chúng ta có thể nghĩ về xác suất nhảy, thay vì quả bóng nhảy.
+Vì vậy, tại một bước, tất cả xác suất trong $x$ biến mất, và chúng ta cần một số xác suất nhảy trở lại vào nó.\\
+
+Xác suất nhảy vào $x$ là:
 \begin{equation*}
     p(x) = \sum_{u \in \text{neighbours(x)}} p(u)p(u \rightarrow x)   
 \end{equation*}
-Now $p(u\rightarrow x)$ is just $\frac{1}{\text{deg}(u)}$. The degree of a cell, denoted $\text{deg}$ is the number
-of other cells that can reach it
+Bây giờ $p(u\rightarrow x)$ chỉ là $\frac{1}{\text{deg}(u)}$. Bậc của một ô, ký hiệu là $\text{deg}$ là số
+các ô khác có thể đến được nó
 \begin{equation*}
     p(x) = \sum_{u \in \text{neighbours(x)}} \frac{p(u)}{\text{deg}(u)}  
 \end{equation*}
 
-Here, we can see that if the system reaches a steady state, $p(x)$ will be proportional to $\text{deg}(x)$.
-So the solution is 
+Ở đây, chúng ta có thể thấy rằng nếu hệ thống đạt đến trạng thái ổn định, $p(x)$ sẽ tỷ lệ thuận với $\text{deg}(x)$.
+Vì vậy, giải pháp là 
 \begin{equation*}
     p(x) = \frac{\text{deg}(x)}{\sum_u \text{deg}(u)}
 \end{equation*}
 
-Which we can check in practice (with something like Mathematica), and it works.
+Điều này chúng ta có thể kiểm tra trong thực tế (với một cái gì đó như Mathematica), và nó hoạt động.
 \\
 
-For our $4 \times 4$ grid, the degrees of the cells are:
+Đối với lưới $4 \times 4$ của chúng ta, bậc của các ô là:
 
 \[
 \begin{matrix}
@@ -34,26 +106,26 @@ For our $4 \times 4$ grid, the degrees of the cells are:
 \end{matrix}
 \]
 
-The probabilities will be proportional to these.\\
-%The total sum is $52$, and because one particle starts in each cell, we can just multiply it by $16$. This gives 
+Xác suất sẽ tỷ lệ thuận với những điều này.\\
+%Tổng số là $52$, và vì một hạt bắt đầu ở mỗi ô, chúng ta có thể nhân nó với $16$. Điều này cho 
 %\[
 %\frac{x \cdot 16}{52} = \frac{x \cdot 4}{13}
 %\]
-%for each \( x \) in the second row. So the expected number of particles in each cell is
+%cho mỗi \( x \) trong hàng thứ hai. Vì vậy, số hạt dự kiến trong mỗi ô là
 %\[
 %\frac{12}{13}, \quad \frac{20}{13}, \quad \frac{20}{13}, \quad \frac{12}{13},
 %\]
-% and $A\cdot B\cdot C\cdot D=\left(\frac{12}{13}\cdot\frac{20}{13}\right)^2=\frac{240}{169}\implies \boxed{409}.$
+% và $A\cdot B\cdot C\cdot D=\left(\frac{12}{13}\cdot\frac{20}{13}\right)^2=\frac{240}{169}\implies \boxed{409}.$
 
-Now let's find the energies. Denote the energy of cell $i$ as $E_i$. Also, we will denote $\beta = \frac{1}{k_B T}$. 
-%The probability of begin in that cell is
+Bây giờ hãy tìm các năng lượng. Ký hiệu năng lượng của ô $i$ là $E_i$. Ngoài ra, chúng ta sẽ ký hiệu $\beta = \frac{1}{k_B T}$. 
+%Xác suất bắt đầu trong ô đó là
 
 %\[
 %\frac{e^{-\beta E_i}}{\sum_j{e^{-\beta E_j}}}
 %\]
 
-%This means that the ratio of probabilities of two states is:
-By the Boltzmann distribution:
+%Điều này có nghĩa là tỷ lệ xác suất của hai trạng thái là:
+Theo phân bố Boltzmann:
 \[
 \frac{p(E_1)}{p(E_2)} = e^{\beta(E_2 - E_1)}
 \]
@@ -61,7 +133,7 @@ By the Boltzmann distribution:
 E_2 - E_1 = k_B T \log{\frac{p(E_1)}{p(E_2)}}
 \]
 
-This means that the difference in energies is maximized for biggest ratio. Which gives:
+Điều này có nghĩa là sự chênh lệch năng lượng được tối đa hóa cho tỷ lệ lớn nhất. Điều này cho:
 
 \[
 \Delta E_{max} = k_B T \log{\frac{4}{2}} = \boxed{5.9728 \cdot 10 ^ {-8}\mathrm{eV}.}

@@ -1,21 +1,43 @@
+% \begin{solution}
+% We first find the optimal speed to reach a point $(X,Y)$ in space from the origin $(0,0).$ If the launching angle is $\alpha$ and the launch speed $v$, the kinematic equations for the $x$- and $y$-directions are 
+% \begin{align*}
+%     x&=vt\cos\alpha & y&=-\frac 12 gt^2+vt\sin\alpha.
+% \end{align*}
+% Solving for the shape of the trajectory gives
+% \[y=-\frac{gx^2}{2v^2\cos^2\alpha}+x\tan\alpha.\]
+% If $v$ is large enough, there exists a respective $\alpha$ for which the point $(x,y)=(X,Y)$ satisfies the equation. Now we note that $1/\cos^2\alpha=1+\tan^2\alpha$ which turns the trajectory into a quadratic in $\xi=\tan\alpha$
+% \[\xi^2-\frac{2v^2}{gd}\xi+\frac{2v^2h}{gd^2}+1=0.\]
+% This has real solutions for $\xi$ if the discriminant is non-negative. If the discriminant is positive, it means there are two angles for the respective speed. This clearly means that the speed is not optimal. Hence we want the discriminant to be zero:
+% \[\frac{v^4}{g^2d^2}-\frac{2v^2h}{gd^2}-1=0.\]
+% This is a biquadratic in $v$ and solving:
+% \[v^2=gY+g\sqrt{X^2+Y^2}\implies v_0=\sqrt{gY+g\sqrt{X^2+Y^2}}.\]
+
+% Now, let's get back to the problem at hand. Let $x$ be the distance from the edge of the table at the bouncing point. As the speed is conserved during the bounce, the minimal speed must be such that at the point $x$ the ball can reach both the edge of the table (kinematic trajectories are reversible) and the top of the net (the ball has to go over the net). Using the derived result
+% \[v(x)=\max\left\{\sqrt{gh+g\sqrt{h^2+(d-x)^2}},\sqrt{gx}\right\}.\]
+% Clearly the first term increases with $x$ and the other term decreases with $x$. Thus the global minimum of $v(x)$ is found at the point where the two terms are equal. This corresponds to
+% \[h+\sqrt{h^2+(d-x)^2}=x\implies x=\frac{d^2}{2(d-h)}\]
+% and thus
+% \[v_1=d\sqrt{\frac{g}{2(d-h)}}\approx2.75\;\mathrm{m/s}.\]
+% \end{solution}
+
 \begin{solution}
-We first find the optimal speed to reach a point $(X,Y)$ in space from the origin $(0,0).$ If the launching angle is $\alpha$ and the launch speed $v$, the kinematic equations for the $x$- and $y$-directions are 
+Đầu tiên, chúng ta tìm vận tốc tối ưu để đạt đến điểm $(X,Y)$ trong không gian từ gốc tọa độ $(0,0).$ Nếu góc phóng là $\alpha$ và vận tốc phóng là $v$, các phương trình động học cho các hướng $x$ và $y$ là 
 \begin{align*}
     x&=vt\cos\alpha & y&=-\frac 12 gt^2+vt\sin\alpha.
 \end{align*}
-Solving for the shape of the trajectory gives
+Giải phương trình cho hình dạng của quỹ đạo ta có
 \[y=-\frac{gx^2}{2v^2\cos^2\alpha}+x\tan\alpha.\]
-If $v$ is large enough, there exists a respective $\alpha$ for which the point $(x,y)=(X,Y)$ satisfies the equation. Now we note that $1/\cos^2\alpha=1+\tan^2\alpha$ which turns the trajectory into a quadratic in $\xi=\tan\alpha$
+Nếu $v$ đủ lớn, sẽ tồn tại một góc $\alpha$ tương ứng để điểm $(x,y)=(X,Y)$ thỏa mãn phương trình. Bây giờ chúng ta lưu ý rằng $1/\cos^2\alpha=1+\tan^2\alpha$ biến quỹ đạo thành một phương trình bậc hai trong $\xi=\tan\alpha$
 \[\xi^2-\frac{2v^2}{gd}\xi+\frac{2v^2h}{gd^2}+1=0.\]
-This has real solutions for $\xi$ if the discriminant is non-negative. If the discriminant is positive, it means there are two angles for the respective speed. This clearly means that the speed is not optimal. Hence we want the discriminant to be zero:
+Phương trình này có nghiệm thực cho $\xi$ nếu biệt thức không âm. Nếu biệt thức dương, điều đó có nghĩa là có hai góc cho vận tốc tương ứng. Điều này rõ ràng có nghĩa là vận tốc không tối ưu. Do đó, chúng ta muốn biệt thức bằng không:
 \[\frac{v^4}{g^2d^2}-\frac{2v^2h}{gd^2}-1=0.\]
-This is a biquadratic in $v$ and solving:
+Đây là một phương trình bậc bốn trong $v$ và giải:
 \[v^2=gY+g\sqrt{X^2+Y^2}\implies v_0=\sqrt{gY+g\sqrt{X^2+Y^2}}.\]
 
-Now, let's get back to the problem at hand. Let $x$ be the distance from the edge of the table at the bouncing point. As the speed is conserved during the bounce, the minimal speed must be such that at the point $x$ the ball can reach both the edge of the table (kinematic trajectories are reversible) and the top of the net (the ball has to go over the net). Using the derived result
+Bây giờ, hãy quay lại vấn đề chính. Gọi $x$ là khoảng cách từ mép bàn tại điểm nảy. Vì vận tốc được bảo toàn trong quá trình nảy, vận tốc tối thiểu phải sao cho tại điểm $x$ quả bóng có thể đạt đến cả mép bàn (các quỹ đạo động học có thể đảo ngược) và đỉnh của lưới (quả bóng phải vượt qua lưới). Sử dụng kết quả đã suy ra
 \[v(x)=\max\left\{\sqrt{gh+g\sqrt{h^2+(d-x)^2}},\sqrt{gx}\right\}.\]
-Clearly the first term increases with $x$ and the other term decreases with $x$. Thus the global minimum of $v(x)$ is found at the point where the two terms are equal. This corresponds to
+Rõ ràng rằng thành phần đầu tiên tăng theo $x$ và thành phần khác giảm theo $x$. Do đó, giá trị nhỏ nhất toàn cục của $v(x)$ được tìm thấy tại điểm mà hai thành phần bằng nhau. Điều này tương ứng với
 \[h+\sqrt{h^2+(d-x)^2}=x\implies x=\frac{d^2}{2(d-h)}\]
-and thus
+và do đó
 \[v_1=d\sqrt{\frac{g}{2(d-h)}}\approx2.75\;\mathrm{m/s}.\]
 \end{solution}

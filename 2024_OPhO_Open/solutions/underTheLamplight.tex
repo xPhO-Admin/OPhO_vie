@@ -1,15 +1,45 @@
+% \begin{solution}
+%     The circle below the lamp has a radius of 
+
+% $$r = \sqrt{\frac{3\pi}{\pi}} = \sqrt{3}$$
+
+% The greatest angle that the light travels from the vertical is therefore
+
+% $$\theta = \arctan{\frac{\sqrt{3}}{3}} = 30^{\circ}$$
+
+% We can examine a cross section of the light's path. Consider Snell's Law, $n_1\sin{\theta} = n_2\sin{\theta}$. It can be seen that at any point along the light's path through the liquid, $n\sin{\theta}$ will always equal some constant value. In this case, because the incident angle is 30 degrees and the index of refraction of air is 1, this constant value will be $\sin{30^{\circ}} = 0.5$. We can assign the light ray the initial conditions $(x,y) = (\sqrt{3},0)$, as the light enters the Ophonium a horizontal distance of $\sqrt{3}$ from the lamp.
+
+% We have:
+
+% $$n\sin{\theta} = \frac{1}{2}\longrightarrow \sin{\theta} = \frac{1}{2n} = \frac{1}{2+4y}$$
+
+% $$\cos\bigg(\frac{\pi}{2}-\theta\bigg) = \frac{1}{2+4y}\longrightarrow\frac{1}{\sqrt{1+\tan^2\big(\frac{\pi}{2}-\theta\big)}} = \frac{1}{2+4y}$$
+
+% $$\frac{1}{\sqrt{1+\big(\frac{\delta y}{\delta x}\big)^2}} = \frac{1}{2+4y}\longrightarrow \sqrt{1+\big(\frac{\delta y}{\delta x}\big)^2} = 2 + 4y$$
+
+% $$\frac{\delta y}{\delta x} = \sqrt{(2+4y)^2 - 1}\longrightarrow \frac{\delta x}{\delta y} = \frac{1}{\sqrt{(2+4y)^2 - 1}}$$
+
+% $$\int \delta x = \int\frac{1}{\sqrt{(2+4y)^2 - 1}}\delta y$$
+
+% $$x = \frac{1}{4}\cosh^{-1}(2+4y)+ C \longrightarrow x = \frac{1}{4}\bigg(\cosh^{-1}(2+4y) + 4\sqrt{3} - \ln(2 + \sqrt{3})\bigg)$$
+
+% Plugging in $y = 5$ gives $x \approx 2.3487$. This is the radius of the circle formed at the bottom of the vat. Thus, the total area is
+
+% $$x^2\pi \approx \boxed{17.33\;\mathrm{m^2}}$$
+% \end{solution}
+
 \begin{solution}
-    The circle below the lamp has a radius of 
+    Vòng tròn dưới đèn có bán kính là 
 
 $$r = \sqrt{\frac{3\pi}{\pi}} = \sqrt{3}$$
 
-The greatest angle that the light travels from the vertical is therefore
+Góc lớn nhất mà ánh sáng di chuyển từ phương thẳng đứng do đó là
 
 $$\theta = \arctan{\frac{\sqrt{3}}{3}} = 30^{\circ}$$
 
-We can examine a cross section of the light's path. Consider Snell's Law, $n_1\sin{\theta} = n_2\sin{\theta}$. It can be seen that at any point along the light's path through the liquid, $n\sin{\theta}$ will always equal some constant value. In this case, because the incident angle is 30 degrees and the index of refraction of air is 1, this constant value will be $\sin{30^{\circ}} = 0.5$. We can assign the light ray the initial conditions $(x,y) = (\sqrt{3},0)$, as the light enters the Ophonium a horizontal distance of $\sqrt{3}$ from the lamp.
+Chúng ta có thể kiểm tra một mặt cắt của đường đi của ánh sáng. Xem xét Định luật Snell, $n_1\sin{\theta} = n_2\sin{\theta}$. Có thể thấy rằng tại bất kỳ điểm nào dọc theo đường đi của ánh sáng qua chất lỏng, $n\sin{\theta}$ sẽ luôn bằng một giá trị không đổi. Trong trường hợp này, vì góc tới là 30 độ và chiết suất của không khí là 1, giá trị không đổi này sẽ là $\sin{30^{\circ}} = 0.5$. Chúng ta có thể gán cho tia sáng các điều kiện ban đầu $(x,y) = (\sqrt{3},0)$, khi ánh sáng đi vào Ophonium một khoảng ngang $\sqrt{3}$ từ đèn.
 
-We have:
+Chúng ta có:
 
 $$n\sin{\theta} = \frac{1}{2}\longrightarrow \sin{\theta} = \frac{1}{2n} = \frac{1}{2+4y}$$
 
@@ -23,7 +53,7 @@ $$\int \delta x = \int\frac{1}{\sqrt{(2+4y)^2 - 1}}\delta y$$
 
 $$x = \frac{1}{4}\cosh^{-1}(2+4y)+ C \longrightarrow x = \frac{1}{4}\bigg(\cosh^{-1}(2+4y) + 4\sqrt{3} - \ln(2 + \sqrt{3})\bigg)$$
 
-Plugging in $y = 5$ gives $x \approx 2.3487$. This is the radius of the circle formed at the bottom of the vat. Thus, the total area is
+Thay $y = 5$ vào ta có $x \approx 2.3487$. Đây là bán kính của vòng tròn được tạo ra ở đáy thùng. Do đó, tổng diện tích là
 
 $$x^2\pi \approx \boxed{17.33\;\mathrm{m^2}}$$
 \end{solution}

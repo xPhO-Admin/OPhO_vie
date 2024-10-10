@@ -1,29 +1,57 @@
 
 
+% \begin{solution}
+
+% We first transform into the reference frame of the particle. In this frame, it becomes a stationary particle receiving and emitting light isotropically. What frequency of light, we ask? We will perform a Lorentz transformation to find out. Let the x-axis be along the direction of the particle velocity. Setting $c=1$, the wavevector 4-vector in the lab frame is 
+
+% $$k^{\mu}=(\omega, \omega  \cos \alpha, -\omega \sin \alpha ) $$
+
+% Transforming to the particle frame, the new 4-vector is 
+
+% $$k_1^{\mu}=(\omega \gamma (1-v\cos\alpha), ..., ...)$$
+
+% The x- and y- components do not matter as we only care about the t-component, which tells us the frequency of the light in the particle frame. So light of frequency $\omega_1=\omega \gamma (1-v\cos\alpha)$ gets scattered into all directions. Consider light that gets scattered into an arbitrary angle $\phi$ from the x-axis. Its 4-vector would be
+
+% $$k_2^{\mu}=(\omega_1, \omega_1 \cos \phi, \omega_1 \sin \phi)$$
+
+% Transforming this back into the lab frame, the final 4-vector is 
+
+% $$k_3^{\mu}=(\omega_1 \gamma (1+v\cos\phi), \omega_1 \gamma (\cos\phi+v), \omega_1 \sin \phi)$$
+
+% In the lab frame, the angle $\delta$ between the x-axis and the direction of propagation of $k_3$ is given by
+
+% $$\tan \delta = \frac{\sin \phi}{\gamma(\cos\phi+v)}$$
+
+% We can start plugging in numbers. We find that $\gamma=1.155$, $\omega_1=5.29\cdot 10^{15} \ \mathrm{Hz}$, and $\tan \delta=0.966$. We can solve for $\phi$, getting back $\phi=70.0^{\circ}$. 
+
+% Our answer is therefore $\boxed{\omega'=k_3^0=7.15\cdot 10^{15} \ \mathrm{Hz}}$.
+
+% \end{solution}
+
 \begin{solution}
 
-We first transform into the reference frame of the particle. In this frame, it becomes a stationary particle receiving and emitting light isotropically. What frequency of light, we ask? We will perform a Lorentz transformation to find out. Let the x-axis be along the direction of the particle velocity. Setting $c=1$, the wavevector 4-vector in the lab frame is 
+Đầu tiên, chúng ta chuyển đổi vào hệ quy chiếu của hạt. Trong hệ này, nó trở thành một hạt đứng yên nhận và phát ra ánh sáng đẳng hướng. Chúng ta hỏi tần số của ánh sáng là bao nhiêu? Chúng ta sẽ thực hiện một phép biến đổi Lorentz để tìm ra. Đặt trục x dọc theo hướng vận tốc của hạt. Đặt $c=1$, vectơ sóng 4 chiều trong hệ phòng thí nghiệm là 
 
 $$k^{\mu}=(\omega, \omega  \cos \alpha, -\omega \sin \alpha ) $$
 
-Transforming to the particle frame, the new 4-vector is 
+Chuyển đổi sang hệ quy chiếu của hạt, vectơ 4 chiều mới là 
 
 $$k_1^{\mu}=(\omega \gamma (1-v\cos\alpha), ..., ...)$$
 
-The x- and y- components do not matter as we only care about the t-component, which tells us the frequency of the light in the particle frame. So light of frequency $\omega_1=\omega \gamma (1-v\cos\alpha)$ gets scattered into all directions. Consider light that gets scattered into an arbitrary angle $\phi$ from the x-axis. Its 4-vector would be
+Các thành phần x và y không quan trọng vì chúng ta chỉ quan tâm đến thành phần t, thành phần này cho chúng ta biết tần số của ánh sáng trong hệ quy chiếu của hạt. Vì vậy, ánh sáng có tần số $\omega_1=\omega \gamma (1-v\cos\alpha)$ bị tán xạ theo mọi hướng. Xem xét ánh sáng bị tán xạ theo một góc bất kỳ $\phi$ từ trục x. Vectơ 4 chiều của nó sẽ là
 
 $$k_2^{\mu}=(\omega_1, \omega_1 \cos \phi, \omega_1 \sin \phi)$$
 
-Transforming this back into the lab frame, the final 4-vector is 
+Chuyển đổi điều này trở lại hệ phòng thí nghiệm, vectơ 4 chiều cuối cùng là 
 
 $$k_3^{\mu}=(\omega_1 \gamma (1+v\cos\phi), \omega_1 \gamma (\cos\phi+v), \omega_1 \sin \phi)$$
 
-In the lab frame, the angle $\delta$ between the x-axis and the direction of propagation of $k_3$ is given by
+Trong hệ phòng thí nghiệm, góc $\delta$ giữa trục x và hướng truyền của $k_3$ được cho bởi
 
 $$\tan \delta = \frac{\sin \phi}{\gamma(\cos\phi+v)}$$
 
-We can start plugging in numbers. We find that $\gamma=1.155$, $\omega_1=5.29\cdot 10^{15} \ \mathrm{Hz}$, and $\tan \delta=0.966$. We can solve for $\phi$, getting back $\phi=70.0^{\circ}$. 
+Chúng ta có thể bắt đầu thay số vào. Chúng ta tìm thấy $\gamma=1.155$, $\omega_1=5.29\cdot 10^{15} \ \mathrm{Hz}$, và $\tan \delta=0.966$. Chúng ta có thể giải $\phi$, nhận lại $\phi=70.0^{\circ}$. 
 
-Our answer is therefore $\boxed{\omega'=k_3^0=7.15\cdot 10^{15} \ \mathrm{Hz}}$.
+Do đó, câu trả lời của chúng ta là $\boxed{\omega'=k_3^0=7.15\cdot 10^{15} \ \mathrm{Hz}}$.
 
 \end{solution}

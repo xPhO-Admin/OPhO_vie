@@ -1,18 +1,68 @@
+% \begin{solution}
+% Let us start with the first jump, starting at the location $(x_0,y_0)=(0,H)$. Determining the envelope of a projectile launched with velocity
+% $V[1]$ is a well-known problem, where the bound of all possible trajectories forms a parabola that satisfies the following equation:
+% \begin{equation}
+% y_1 = H_{01} - A_{01}x_1^2  \ \ , \ \ \text{in which} \ \  H_{01}=H+\frac{V[1]^2}{2g}  \ \ \text{and} \ \ A_{01}=\frac{g}{2V[1]^2} \ \ .
+% \end{equation}
+% If the second jump starts at a position $(x_1,y_1)$ on this envelope, then all possible position the bird can reach (at least, before the third jump) can be described by:
+% \begin{equation}
+% y_2 = \left(y_1 + H_{21} \right) - A_{21}\left(x_2-x_1\right)^2 \ \ , \ \ \text{in which} \ \  H_{21}=\frac{V[2]^2}{2g}  \ \ \text{and} \ \ A_{21}=\frac{g}{2V[2]^2} \ \ .
+% \end{equation}
+% i.e.
+% \[y_2=H_{01}+H_{21}-A_{01}x_1^2-A_{21}(x_2-x_1)^2.\]
+% All the points $(x,y)=(x_2,y_2)$ which are reachable within two jumps will have a/multiple respective $x_1$ for which the above equation is fulfilled. The equation is qudratic with respect to $x_1$ so there will exist a respective $x_1$ if the discriminant of the equation (wrt. $x_1$) is non-negative. In standard form the quadratic equation wrt. $x_1$ is
+% \[(A_{01}+A_{21})x_1^2-2A_{21}x_2x_1+(y_2+A_{21}x_2^2-H_{01}-H_{21})=0,\]
+% so from a non-negative discriminant we get
+% \begin{equation}
+% \begin{split}
+% 0 \geq(A_{01}+A_{21})y_2+A_{01}A_{21}x_2^2-(A_{01}+A_{21})(H_{01}+H_{21}) &
+% \\
+% \Longleftrightarrow \ \ y_2 \leq (H_{01}+H_{21})-\left(A_{01}^{-1}+A_{12}^{-1}\right)^{-1}x_2^2 & \ \ .
+% \end{split}
+% \end{equation}
+% The envelope curve for two jumps is then the one for which the above inequality becomes an equality.\\
+
+% We can carry on the procedure inductively for an arbitrary $n$-th jump and get the envelope curve to be
+% \[y_n=\left(\sum_{j=1}^{n}H_{j,j-1}\right)-\left(\sum_{j=1}^{n}A_{j,j-1}^{-1}\right)^{-1}x_n^2,\]
+% where we can carry on the calculation for $n\rightarrow \infty$ with the Basel summation series:
+% \begin{equation}
+% \begin{split}
+% \sum^{\infty}_{j=1} H_{j,j-1} &= H + \sum^{\infty}_{j=1}\frac{V[j]^2}{2g} = H + \frac{V_0^2}{2g} \sum^{\infty}_{j=1} j^{-2} = H + \frac{\pi^2}{12} \frac{V_0^2}{g} \ \ ,
+% \\
+% \left( \sum^{\infty}_{j=1} A_{j,j-1}^{-1} \right)^{-1} &= \left( \sum^{\infty}_{j=1} \frac{2V[j]^2}{g} \right)^{-1} = \frac{g}{2V_0^2}\left( \sum^{\infty}_{j=1} j^{-2} \right)^{-1} = \frac{3}{\pi^2} \frac{g}{V_0^2} \ \ .
+% \end{split}
+% \end{equation}
+% i.e. the envelope curve for the tired flappy bird is
+% \[y=H+\frac{\pi^2}{12}\frac{V_0^2}{g}-\frac{3}{\pi^2}\frac{g}{V_0^2}x^2.\]
+% The furthest (horizontal) distance is the $x$-coordinate ($x=L>0$) where the envelope curve intersects the ground $y=0$:
+% \begin{equation}
+% \begin{split}
+% 0&=\left( H + \frac{\pi^2}{12} \frac{V_0^2}{g} \right) - \left( \frac{3}{\pi^2} \frac{g}{V_0^2} \right) L^2
+% \\
+% \Longrightarrow \ \ L &= \frac{\pi^2}{6} \left(1 + \frac{12}{\pi^2} \frac{gH}{V_0^2} \right)^{1/2} \frac{V_0^2}{g} \approx \boxed{60.32\;\mathrm{m}}.
+% \end{split}
+% \end{equation}
+% \ \ 
+
+
+% * This puzzle was created with helps from Long T. Nguyen.
+
+% \end{solution}
+
 \begin{solution}
-Let us start with the first jump, starting at the location $(x_0,y_0)=(0,H)$. Determining the envelope of a projectile launched with velocity
-$V[1]$ is a well-known problem, where the bound of all possible trajectories forms a parabola that satisfies the following equation:
+Hãy bắt đầu với bước nhảy đầu tiên, bắt đầu tại vị trí $(x_0,y_0)=(0,H)$. Xác định hình bao quỹ đạo của một vật được phóng lên với vận tốc $V$ là một bài toán đã quen thuộc, theo đó đó giới hạn của tất cả các quỹ đạo có thể tạo thành một parabol thỏa mãn phương trình sau:
 \begin{equation}
-y_1 = H_{01} - A_{01}x_1^2  \ \ , \ \ \text{in which} \ \  H_{01}=H+\frac{V[1]^2}{2g}  \ \ \text{and} \ \ A_{01}=\frac{g}{2V[1]^2} \ \ .
+y_1 = H_{01} - A_{01}x_1^2  \ \ , \ \ \text{trong đó} \ \  H_{01}=H+\frac{V^2}{2g}  \ \ \text{và} \ \ A_{01}=\frac{g}{2V^2} \ \ .
 \end{equation}
-If the second jump starts at a position $(x_1,y_1)$ on this envelope, then all possible position the bird can reach (at least, before the third jump) can be described by:
+Nếu bước nhảy thứ hai bắt đầu tại vị trí $(x_1,y_1)$ trên bao này, thì tất cả các vị trí có thể mà con chim có thể đạt được (ít nhất là trước bước nhảy thứ ba) có thể được mô tả bởi:
 \begin{equation}
-y_2 = \left(y_1 + H_{21} \right) - A_{21}\left(x_2-x_1\right)^2 \ \ , \ \ \text{in which} \ \  H_{21}=\frac{V[2]^2}{2g}  \ \ \text{and} \ \ A_{21}=\frac{g}{2V[2]^2} \ \ .
+y_2 = \left(y_1 + H_{21} \right) - A_{21}\left(x_2-x_1\right)^2 \ \ , \ \ \text{trong đó} \ \  H_{21}=\frac{V^2}{2g}  \ \ \text{và} \ \ A_{21}=\frac{g}{2V^2} \ \ .
 \end{equation}
-i.e.
+tức là
 \[y_2=H_{01}+H_{21}-A_{01}x_1^2-A_{21}(x_2-x_1)^2.\]
-All the points $(x,y)=(x_2,y_2)$ which are reachable within two jumps will have a/multiple respective $x_1$ for which the above equation is fulfilled. The equation is qudratic with respect to $x_1$ so there will exist a respective $x_1$ if the discriminant of the equation (wrt. $x_1$) is non-negative. In standard form the quadratic equation wrt. $x_1$ is
+Tất cả các điểm $(x,y)=(x_2,y_2)$ có thể đạt được trong hai bước nhảy sẽ có một hoặc nhiều giá trị $x_1$ tương ứng mà phương trình trên được thỏa mãn. Phương trình này là bậc hai đối với $x_1$ nên sẽ tồn tại một $x_1$ tương ứng nếu biệt thức của phương trình (đối với $x_1$) không âm. Ở dạng chuẩn, phương trình bậc hai đối với $x_1$ là
 \[(A_{01}+A_{21})x_1^2-2A_{21}x_2x_1+(y_2+A_{21}x_2^2-H_{01}-H_{21})=0,\]
-so from a non-negative discriminant we get
+vì vậy từ biệt thức delta không âm ta có
 \begin{equation}
 \begin{split}
 0 \geq(A_{01}+A_{21})y_2+A_{01}A_{21}x_2^2-(A_{01}+A_{21})(H_{01}+H_{21}) &
@@ -20,11 +70,11 @@ so from a non-negative discriminant we get
 \Longleftrightarrow \ \ y_2 \leq (H_{01}+H_{21})-\left(A_{01}^{-1}+A_{12}^{-1}\right)^{-1}x_2^2 & \ \ .
 \end{split}
 \end{equation}
-The envelope curve for two jumps is then the one for which the above inequality becomes an equality.\\
+Đường bao cho hai bước nhảy sau đó là đường mà bất đẳng thức trên trở thành một đẳng thức.\\
 
-We can carry on the procedure inductively for an arbitrary $n$-th jump and get the envelope curve to be
+Chúng ta có thể tiếp tục quy trình này một cách quy nạp cho một bước nhảy thứ $n$ bất kỳ và nhận được đường bao là
 \[y_n=\left(\sum_{j=1}^{n}H_{j,j-1}\right)-\left(\sum_{j=1}^{n}A_{j,j-1}^{-1}\right)^{-1}x_n^2,\]
-where we can carry on the calculation for $n\rightarrow \infty$ with the Basel summation series:
+trong đó chúng ta có thể tiếp tục tính toán cho $n\rightarrow \infty$ với chuỗi Basel:
 \begin{equation}
 \begin{split}
 \sum^{\infty}_{j=1} H_{j,j-1} &= H + \sum^{\infty}_{j=1}\frac{V[j]^2}{2g} = H + \frac{V_0^2}{2g} \sum^{\infty}_{j=1} j^{-2} = H + \frac{\pi^2}{12} \frac{V_0^2}{g} \ \ ,
@@ -32,9 +82,9 @@ where we can carry on the calculation for $n\rightarrow \infty$ with the Basel s
 \left( \sum^{\infty}_{j=1} A_{j,j-1}^{-1} \right)^{-1} &= \left( \sum^{\infty}_{j=1} \frac{2V[j]^2}{g} \right)^{-1} = \frac{g}{2V_0^2}\left( \sum^{\infty}_{j=1} j^{-2} \right)^{-1} = \frac{3}{\pi^2} \frac{g}{V_0^2} \ \ .
 \end{split}
 \end{equation}
-i.e. the envelope curve for the tired flappy bird is
+tức là đường bao cho con chim mệt mỏi là
 \[y=H+\frac{\pi^2}{12}\frac{V_0^2}{g}-\frac{3}{\pi^2}\frac{g}{V_0^2}x^2.\]
-The furthest (horizontal) distance is the $x$-coordinate ($x=L>0$) where the envelope curve intersects the ground $y=0$:
+Khoảng cách xa nhất (theo chiều ngang) là tọa độ $x$ ($x=L>0$) nơi đường bao giao với mặt đất $y=0$:
 \begin{equation}
 \begin{split}
 0&=\left( H + \frac{\pi^2}{12} \frac{V_0^2}{g} \right) - \left( \frac{3}{\pi^2} \frac{g}{V_0^2} \right) L^2
@@ -45,6 +95,6 @@ The furthest (horizontal) distance is the $x$-coordinate ($x=L>0$) where the env
 \ \ 
 
 
-* This puzzle was created with helps from Long T. Nguyen.
+* Bài toán này được tạo ra với sự giúp đỡ của Nguyễn Thành Long.
 
 \end{solution}

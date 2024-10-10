@@ -1,12 +1,24 @@
 %%Thanks to Joshua Wang (USPT '24) for providing the non-fakesolve solution! :)
+% \begin{solution}
+% Let the string have tension $T$, and let the displacement be $A\sin(\pi x/L)\sin(\omega t)$. We compute the total energy by finding the length at the peak of an oscillation:
+% \begin{align*}E&=T(L_{\text{peak}} - L)\\ &=T\left(\int_0^L\sqrt{1 + \frac{\pi^2 A^2}{L^2}\cos^2\frac{\pi x}{L}}\ dx - L\right)\\ &\approx T\left(\int_0^L 1 + \frac{\pi^2 A^2}{2L^2}\cos^2\frac{\pi x}{L}\ dx - L\right)\\ &= \frac{\pi^2 A^2 T}{4L}\end{align*}
+% At time $t$, the net horizontal force on the finger is:
+% \begin{align*}F_x = T\left(1 - \cos\left(\arctan\left(\frac{A\pi}{L}\sin(\omega t)\right)\right)\right)\approx \frac{\pi^2 A^2 T}{2L^2}\sin^2(\omega t)\end{align*}
+% Thus, the average horizontal force on the finger is $\displaystyle \langle F_x\rangle = -\frac{dE}{dL} = \frac{\pi^2 A^2 T}{4L^2} = \frac{E}{L}$. This gives $\displaystyle E \propto \frac{1}{L}$, so $A$ is constant, and $A_2=A=\boxed{1.25\times 10^{-3}\;\mathrm{m}}.$
+% \newline
+% \newline
+% Note that the question could also have been solved through the adiabatic invariant, or alternately by realizing that the restoring force is linear in displacement at all points on the string. As a result, a valid solution, by superposition, is to use a rotational analogy (with the string performing rotation like a skipping-rope) and conserve angular momentum. In that case, it will be observed that the decrease in mass of the vibrating portion of the string exactly counteracts the increase in angular velocity caused by the decreased length.  
+
+% \end{solution}
+
 \begin{solution}
-Let the string have tension $T$, and let the displacement be $A\sin(\pi x/L)\sin(\omega t)$. We compute the total energy by finding the length at the peak of an oscillation:
+Gọi lực căng của dây là $T$, và độ dịch chuyển là $A\sin(\pi x/L)\sin(\omega t)$. Chúng ta tính tổng năng lượng bằng cách tìm chiều dài tại đỉnh của một dao động:
 \begin{align*}E&=T(L_{\text{peak}} - L)\\ &=T\left(\int_0^L\sqrt{1 + \frac{\pi^2 A^2}{L^2}\cos^2\frac{\pi x}{L}}\ dx - L\right)\\ &\approx T\left(\int_0^L 1 + \frac{\pi^2 A^2}{2L^2}\cos^2\frac{\pi x}{L}\ dx - L\right)\\ &= \frac{\pi^2 A^2 T}{4L}\end{align*}
-At time $t$, the net horizontal force on the finger is:
+Tại thời điểm $t$, lực ngang tổng hợp lên ngón tay là:
 \begin{align*}F_x = T\left(1 - \cos\left(\arctan\left(\frac{A\pi}{L}\sin(\omega t)\right)\right)\right)\approx \frac{\pi^2 A^2 T}{2L^2}\sin^2(\omega t)\end{align*}
-Thus, the average horizontal force on the finger is $\displaystyle \langle F_x\rangle = -\frac{dE}{dL} = \frac{\pi^2 A^2 T}{4L^2} = \frac{E}{L}$. This gives $\displaystyle E \propto \frac{1}{L}$, so $A$ is constant, and $A_2=A=\boxed{1.25\times 10^{-3}\;\mathrm{m}}.$
+Do đó, lực ngang trung bình lên ngón tay là $\displaystyle \langle F_x\rangle = -\frac{dE}{dL} = \frac{\pi^2 A^2 T}{4L^2} = \frac{E}{L}$. Điều này cho ta $\displaystyle E \propto \frac{1}{L}$, vì vậy $A$ là hằng số, và $A_2=A=\boxed{1.25\times 10^{-3}\;\mathrm{m}}.$
 \newline
 \newline
-Note that the question could also have been solved through the adiabatic invariant, or alternately by realizing that the restoring force is linear in displacement at all points on the string. As a result, a valid solution, by superposition, is to use a rotational analogy (with the string performing rotation like a skipping-rope) and conserve angular momentum. In that case, it will be observed that the decrease in mass of the vibrating portion of the string exactly counteracts the increase in angular velocity caused by the decreased length.  
+Lưu ý rằng câu hỏi cũng có thể được giải quyết thông qua bất biến đoạn nhiệt, hoặc bằng cách nhận ra rằng lực phục hồi là tuyến tính theo độ dịch chuyển tại tất cả các điểm trên dây. Kết quả là, một giải pháp hợp lệ, bằng cách chồng chất, là sử dụng một phép tương tự quay (với dây thực hiện quay như một sợi dây nhảy) và bảo toàn động lượng góc. Trong trường hợp đó, sẽ thấy rằng sự giảm khối lượng của phần dây rung đúng bằng sự tăng tốc độ góc do chiều dài giảm.  
 
 \end{solution}

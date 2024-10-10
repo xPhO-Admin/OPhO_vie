@@ -13,9 +13,14 @@
 
 \begin{solution}
 Gọi lực căng của dây là $T$, và độ dịch chuyển là $A\sin(\pi x/L)\sin(\omega t)$. Chúng ta tính tổng năng lượng bằng cách tìm chiều dài tại đỉnh của một dao động:
-\begin{align*}E&=T(L_{\text{peak}} - L)\\ &=T\left(\int_0^L\sqrt{1 + \frac{\pi^2 A^2}{L^2}\cos^2\frac{\pi x}{L}}\ dx - L\right)\\ &\approx T\left(\int_0^L 1 + \frac{\pi^2 A^2}{2L^2}\cos^2\frac{\pi x}{L}\ dx - L\right)\\ &= \frac{\pi^2 A^2 T}{4L}\end{align*}
+\begin{align*}
+  E&=T(L_{\text{peak}} - L)\\ 
+  &=T\left(\int_0^L\sqrt{1 + \frac{\pi^2 A^2}{L^2}\cos^2\frac{\pi x}{L}}\ dx - L\right)\\ &\approx T\left(\int_0^L 1 + \frac{\pi^2 A^2}{2L^2}\cos^2\frac{\pi x}{L}\ dx - L\right)\\ 
+  &= \frac{\pi^2 A^2 T}{4L}\end{align*}
 Tại thời điểm $t$, lực ngang tổng hợp lên ngón tay là:
-\begin{align*}F_x = T\left(1 - \cos\left(\arctan\left(\frac{A\pi}{L}\sin(\omega t)\right)\right)\right)\approx \frac{\pi^2 A^2 T}{2L^2}\sin^2(\omega t)\end{align*}
+\begin{align*}
+F_x = T\left(1 - \cos\left(\arctan\left(\frac{A\pi}{L}\sin(\omega t)\right)\right)\right)\approx \frac{\pi^2 A^2 T}{2L^2}\sin^2(\omega t)
+\end{align*}
 Do đó, lực ngang trung bình lên ngón tay là $\displaystyle \langle F_x\rangle = -\frac{dE}{dL} = \frac{\pi^2 A^2 T}{4L^2} = \frac{E}{L}$. Điều này cho ta $\displaystyle E \propto \frac{1}{L}$, vì vậy $A$ là hằng số, và $A_2=A=\boxed{1.25\times 10^{-3}\;\mathrm{m}}.$
 \newline
 \newline

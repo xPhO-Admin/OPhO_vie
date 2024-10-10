@@ -1,21 +1,43 @@
-\begin{solution}
-We can generalise the argument of the last problem by noting that
-\[v_n\geq\sqrt{gh+g\sqrt{h^2+x^2}},\]
-where $x$ is the distance of the last bounce from the net. Thus we wish to get the ball as close to the net as possible in $n$ bounces. This happens when all the previous bouncers happen at an angle $\ang{45}$. The range of one of these bounces is $\ell=\frac{v^2}{g}$ as one can find from the trajectory equation. Thus we have that the distance of the final bounce from the net is:
-\[x=d-n\ell.\]
-We also note that $v_n\geq \sqrt{2gh}$ based on the lower limit of the previous equation ($x=0$). So if we reach the net in less than $n$ bounces and thus get to $x=0$ for the last bounce, the minimal speed will still be $v_n$. I.e. when $d-n\ell < 0 \implies n>\frac{d}{2h}$ the minimal speed will be
-\[v_n=\sqrt{2gh}.\]
-As $d/2h\approx 4.5$, $N=5.$\\
+% \begin{solution}
+% We can generalise the argument of the last problem by noting that
+% \[v_n\geq\sqrt{gh+g\sqrt{h^2+x^2}},\]
+% where $x$ is the distance of the last bounce from the net. Thus we wish to get the ball as close to the net as possible in $n$ bounces. This happens when all the previous bouncers happen at an angle $\ang{45}$. The range of one of these bounces is $\ell=\frac{v^2}{g}$ as one can find from the trajectory equation. Thus we have that the distance of the final bounce from the net is:
+% \[x=d-n\ell.\]
+% We also note that $v_n\geq \sqrt{2gh}$ based on the lower limit of the previous equation ($x=0$). So if we reach the net in less than $n$ bounces and thus get to $x=0$ for the last bounce, the minimal speed will still be $v_n$. I.e. when $d-n\ell < 0 \implies n>\frac{d}{2h}$ the minimal speed will be
+% \[v_n=\sqrt{2gh}.\]
+% As $d/2h\approx 4.5$, $N=5.$\\
 
-Now if $n<N$, we won't reach the net in $n$ bounces, and the distance from the net for the last bounce is $x=d-n\ell.$ I.e. the speed to get the ball's last bounce to be a distance $x$ away will be $v=\sqrt{g(d-x)/n}.$ Similarly to the previous problems, this means that the optimal speed is achieved at the $x$ for which the optimal speed to get there is the same as to go over the net from there. I.e. we get that
+% Now if $n<N$, we won't reach the net in $n$ bounces, and the distance from the net for the last bounce is $x=d-n\ell.$ I.e. the speed to get the ball's last bounce to be a distance $x$ away will be $v=\sqrt{g(d-x)/n}.$ Similarly to the previous problems, this means that the optimal speed is achieved at the $x$ for which the optimal speed to get there is the same as to go over the net from there. I.e. we get that
+% \[h+\sqrt{h^2+x^2}=\frac{d-x}{n},\]
+% which yields the quadratic equation
+% \[(n^2-1)x^2+2(d-nh)x+2ndh-d^2=0,\]
+% from which we get
+% \[x=\frac{nh-d\pm n\sqrt{h^2+d^2-2ndh}}{n^2-1}.\]
+% As $d>2nh$ the smaller root is negative and thus non-physical. Hence, we take the positive root. Substituting this in one of the expressions for $v$ we get
+% \[v_n=\sqrt{\frac{g}{n^2-1}\left(nd-h-\sqrt{h^2+d^2-2ndh}\right)}.\]
+
+% Thus
+% \[v_{N-1}^N=v_4^5\approx\boxed{17.9\;(\mathrm{m/s})^5.}\]
+% \end{solution}
+
+\begin{solution}
+Chúng ta có thể tổng quát hóa lập luận của bài toán trước bằng cách lưu ý rằng
+\[v_n\geq\sqrt{gh+g\sqrt{h^2+x^2}},\]
+trong đó $x$ là khoảng cách của lần nảy cuối cùng từ lưới. Do đó, chúng ta muốn đưa quả bóng càng gần lưới càng tốt trong $n$ lần nảy. Điều này xảy ra khi tất cả các lần nảy trước đó xảy ra ở góc $\ang{45}$. Tầm xa của một trong những lần nảy này là $\ell=\frac{v^2}{g}$ như có thể tìm thấy từ phương trình quỹ đạo. Do đó, chúng ta có khoảng cách của lần nảy cuối cùng từ lưới là:
+\[x=d-n\ell.\]
+Chúng ta cũng lưu ý rằng $v_n\geq \sqrt{2gh}$ dựa trên giới hạn dưới của phương trình trước đó ($x=0$). Vì vậy, nếu chúng ta đạt đến lưới trong ít hơn $n$ lần nảy và do đó đạt đến $x=0$ cho lần nảy cuối cùng, vận tốc tối thiểu vẫn sẽ là $v_n$. Tức là khi $d-n\ell < 0 \implies n>\frac{d}{2h}$ vận tốc tối thiểu sẽ là
+\[v_n=\sqrt{2gh}.\]
+Vì $d/2h\approx 4.5$, $N=5.$\\
+
+Bây giờ nếu $n<N$, chúng ta sẽ không đạt đến lưới trong $n$ lần nảy, và khoảng cách từ lưới cho lần nảy cuối cùng là $x=d-n\ell.$ Tức là vận tốc để đưa quả bóng nảy cuối cùng cách lưới một khoảng $x$ sẽ là $v=\sqrt{g(d-x)/n}.$ Tương tự như các bài toán trước, điều này có nghĩa là vận tốc tối ưu đạt được tại $x$ mà vận tốc tối ưu để đến đó bằng với vận tốc để vượt qua lưới từ đó. Tức là chúng ta có
 \[h+\sqrt{h^2+x^2}=\frac{d-x}{n},\]
-which yields the quadratic equation
+dẫn đến phương trình bậc hai
 \[(n^2-1)x^2+2(d-nh)x+2ndh-d^2=0,\]
-from which we get
+từ đó chúng ta có
 \[x=\frac{nh-d\pm n\sqrt{h^2+d^2-2ndh}}{n^2-1}.\]
-As $d>2nh$ the smaller root is negative and thus non-physical. Hence, we take the positive root. Substituting this in one of the expressions for $v$ we get
+Vì $d>2nh$ nghiệm nhỏ hơn là âm và do đó không thực tế. Do đó, chúng ta lấy nghiệm dương. Thay thế nghiệm này vào một trong các biểu thức cho $v$ chúng ta có
 \[v_n=\sqrt{\frac{g}{n^2-1}\left(nd-h-\sqrt{h^2+d^2-2ndh}\right)}.\]
 
-Thus
+Do đó
 \[v_{N-1}^N=v_4^5\approx\boxed{17.9\;(\mathrm{m/s})^5.}\]
 \end{solution}

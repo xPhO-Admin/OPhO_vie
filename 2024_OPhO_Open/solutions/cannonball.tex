@@ -1,28 +1,57 @@
+% \begin{solution}
+% Clearly (as $d>h$) if $v$ is high enough, the optimal trajectory to reach $x_{\max}$ is achieved when the launch angle $\alpha=\ang{45}$. Thus we have to first determine whether or not $v$ is high enough.\\
+
+% If $\alpha=\ang{45}$ corresponds to the optimal trajectory over the wall, the highest point of the wall $(d,h)$ is at or under the trajectory. The equation of the trajectory is well-known and easy to derive:
+% \[y=-\frac{gx^2}{2v^2\cos^2\alpha}+x\tan\alpha\]
+% so $\alpha=\ang{45}$ is optimal if
+% \[h\leq -\frac{gd^2}{v^2}+d \implies v\geq d\sqrt{\frac{g}{d-h}}=14\;\mathrm{m/s},\]
+% which is not true. Thus $\alpha=\ang{45}$ is not optimal.\\
+
+% Now clearly the ball cannot go over the wall if $\alpha\leq\ang{45}$. Thus we have to increase the angle which decreases the range as the range is a decreasing function of $\alpha$ when $\alpha>\ang{45}$ which can be seen from the range equation (comes directly from the trajectory equation above):
+% \[R=\frac{2v^2\sin\alpha\cos\alpha}{g}=\frac{v^2\sin2\alpha}{g}.\]
+
+% Thus the optimal trajectory now is the one that just barely touches the top of the wall for the minimal $\alpha$. I.e. we wish $(d,h)$ to be on the trajectory. If we plug in $(x,y)=(d,h)$ to the trajectory equation and use $1/\cos^2\alpha=1+\tan^2\alpha$ and solve for $\xi\equiv\tan\alpha$ from the quadratic equation that ensues we get two possible roots
+% \[\xi_{\pm}=\frac{v^2}{gd}\pm\sqrt{\frac{v^4}{g^2d^2}-\frac{2v^2h}{gd^2}-1}.\]
+% As $\xi=\tan\alpha$ and $\tan$ is an increasing function (in our range), we are interested in the smaller root. Thus
+% \[\alpha=\arctan{\xi_-}.\]
+% Thus the range equation gives us
+% \[x_{\max}=\frac{2\xi_-}{1+\xi_-^2}\frac{v^2}{g}.\]
+
+% The argument for the minimal distance is essentially the same. The top of the wall still has to be under the trajectory and $\alpha>\ang{45}$ so now we want the maximal $\alpha$ which corresponds to $\xi_+.$ Thus
+% \[x_{\min}=\frac{2\xi_+}{1+\xi_+^2}\frac{v^2}{g}.\]
+% And hence
+% \[x_{\max}-x_{\min}=\frac{2v^2}{g}\left(\frac{\xi_-}{1+\xi_-^2}-\frac{\xi_+}{1+\xi_+^2}\right)\approx\boxed{5.38\;\mathrm{m}}.\]
+
+% Note for a full solution (not necessary to get the numerical answer) one should also check if the launch speed given is even high enough to go over the wall at all. This minimal speed is relatively easy to derive (especially using the envelope curve):
+% \[v_{\min}=\sqrt{gh+g\sqrt{h^2+d^2}}\approx{12.6}\;\mathrm{m/s}<v,\]
+% so the question is well-posed.
+% \end{solution}
+
 \begin{solution}
-Clearly (as $d>h$) if $v$ is high enough, the optimal trajectory to reach $x_{\max}$ is achieved when the launch angle $\alpha=\ang{45}$. Thus we have to first determine whether or not $v$ is high enough.\\
+Rõ ràng (vì $d>h$) nếu $v$ đủ lớn, quỹ đạo tối ưu để đạt $x_{\max}$ đạt được khi góc phóng $\alpha=\ang{45}$. Do đó, chúng ta phải xác định trước liệu $v$ có đủ lớn hay không.\\
 
-If $\alpha=\ang{45}$ corresponds to the optimal trajectory over the wall, the highest point of the wall $(d,h)$ is at or under the trajectory. The equation of the trajectory is well-known and easy to derive:
+Nếu $\alpha=\ang{45}$ tương ứng với quỹ đạo tối ưu qua tường, điểm cao nhất của tường $(d,h)$ nằm trên hoặc dưới quỹ đạo. Phương trình của quỹ đạo đã được biết đến và dễ dàng suy ra:
 \[y=-\frac{gx^2}{2v^2\cos^2\alpha}+x\tan\alpha\]
-so $\alpha=\ang{45}$ is optimal if
+vì vậy $\alpha=\ang{45}$ là tối ưu nếu
 \[h\leq -\frac{gd^2}{v^2}+d \implies v\geq d\sqrt{\frac{g}{d-h}}=14\;\mathrm{m/s},\]
-which is not true. Thus $\alpha=\ang{45}$ is not optimal.\\
+điều này không đúng. Do đó $\alpha=\ang{45}$ không phải là tối ưu.\\
 
-Now clearly the ball cannot go over the wall if $\alpha\leq\ang{45}$. Thus we have to increase the angle which decreases the range as the range is a decreasing function of $\alpha$ when $\alpha>\ang{45}$ which can be seen from the range equation (comes directly from the trajectory equation above):
+Bây giờ rõ ràng quả bóng không thể vượt qua tường nếu $\alpha\leq\ang{45}$. Do đó, chúng ta phải tăng góc phóng, điều này làm giảm tầm xa vì tầm xa là một hàm giảm của $\alpha$ khi $\alpha>\ang{45}$, điều này có thể thấy từ phương trình tầm xa (trực tiếp từ phương trình quỹ đạo ở trên):
 \[R=\frac{2v^2\sin\alpha\cos\alpha}{g}=\frac{v^2\sin2\alpha}{g}.\]
 
-Thus the optimal trajectory now is the one that just barely touches the top of the wall for the minimal $\alpha$. I.e. we wish $(d,h)$ to be on the trajectory. If we plug in $(x,y)=(d,h)$ to the trajectory equation and use $1/\cos^2\alpha=1+\tan^2\alpha$ and solve for $\xi\equiv\tan\alpha$ from the quadratic equation that ensues we get two possible roots
+Do đó, quỹ đạo tối ưu bây giờ là quỹ đạo chỉ vừa chạm đỉnh của tường với $\alpha$ nhỏ nhất. Tức là chúng ta muốn $(d,h)$ nằm trên quỹ đạo. Nếu chúng ta thay $(x,y)=(d,h)$ vào phương trình quỹ đạo và sử dụng $1/\cos^2\alpha=1+\tan^2\alpha$ và giải cho $\xi\equiv\tan\alpha$ từ phương trình bậc hai, chúng ta có hai nghiệm khả dĩ
 \[\xi_{\pm}=\frac{v^2}{gd}\pm\sqrt{\frac{v^4}{g^2d^2}-\frac{2v^2h}{gd^2}-1}.\]
-As $\xi=\tan\alpha$ and $\tan$ is an increasing function (in our range), we are interested in the smaller root. Thus
+Vì $\xi=\tan\alpha$ và $\tan$ là một hàm tăng (trong phạm vi của chúng ta), chúng ta quan tâm đến nghiệm nhỏ hơn. Do đó
 \[\alpha=\arctan{\xi_-}.\]
-Thus the range equation gives us
+Do đó, phương trình tầm xa cho chúng ta
 \[x_{\max}=\frac{2\xi_-}{1+\xi_-^2}\frac{v^2}{g}.\]
 
-The argument for the minimal distance is essentially the same. The top of the wall still has to be under the trajectory and $\alpha>\ang{45}$ so now we want the maximal $\alpha$ which corresponds to $\xi_+.$ Thus
+Lập luận cho khoảng cách tối thiểu về cơ bản là giống nhau. Đỉnh của tường vẫn phải nằm dưới quỹ đạo và $\alpha>\ang{45}$ nên bây giờ chúng ta muốn $\alpha$ lớn nhất tương ứng với $\xi_+.$ Do đó
 \[x_{\min}=\frac{2\xi_+}{1+\xi_+^2}\frac{v^2}{g}.\]
-And hence
+Và do đó
 \[x_{\max}-x_{\min}=\frac{2v^2}{g}\left(\frac{\xi_-}{1+\xi_-^2}-\frac{\xi_+}{1+\xi_+^2}\right)\approx\boxed{5.38\;\mathrm{m}}.\]
 
-Note for a full solution (not necessary to get the numerical answer) one should also check if the launch speed given is even high enough to go over the wall at all. This minimal speed is relatively easy to derive (especially using the envelope curve):
+Lưu ý để có một giải pháp đầy đủ (không cần thiết để có được câu trả lời số) người ta cũng nên kiểm tra xem vận tốc phóng đã cho có đủ lớn để vượt qua tường hay không. Vận tốc tối thiểu này tương đối dễ suy ra (đặc biệt là sử dụng đường bao):
 \[v_{\min}=\sqrt{gh+g\sqrt{h^2+d^2}}\approx{12.6}\;\mathrm{m/s}<v,\]
-so the question is well-posed.
+vì vậy câu hỏi được đặt ra là hợp lý.
 \end{solution}

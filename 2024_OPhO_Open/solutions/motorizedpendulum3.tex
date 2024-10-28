@@ -1,21 +1,21 @@
 \begin{solution}
-    The optimal route is to accelerate the mass to $v_{max}$, then as it approaches $\theta=90^{\circ}$, let the mass's kinetic energy carry it to the top while the motor fails to provide enough torque to counteract gravity. 
+    Lộ trình tối ưu là tăng tốc khối lượng đến vận tốc $v_{max}$, sau đó khi nó tiếp cận đến $\theta=90^{\circ}$, để động năng của khối lượng đưa nó lên đỉnh trong khi động cơ không cung cấp đủ mô men xoắn để chống lại trọng lực. 
 
-    We will approximate the answer. Our setup is similar to Motorized Pendulum 1, so the answer to this one should be a small deviation from the answer to that question. Namely, let $\tau_0 = 2mgl-\epsilon $. Near ninety degrees, the torque due to gravity is roughly $mgl$, and the motor's output torque is roughly $\tau_0 \frac{1+\delta}{2}$, where $\delta=90^{\circ} - \theta$ is the distance to the top. 
+    Ta sẽ xấp xỉ đáp án. Thiết lập của bài này tương tự như bài Motorized Pendulum 1, vì vậy đáp án sẽ là một giá trị nhỏ sai lệch từ đáp án của bài đó. Cụ thể, đặt $\tau_0 = 2mgl-\epsilon $. Gần chín mưới độ, mô men do trọng lực sinh ra xấp xỉ là $mgl$, và mô men xoắn của động cơ xấp xỉ $\tau_0 \frac{1+\delta}{2}$, với $\delta=90^{\circ} - \theta$ là khoảng cách đến đỉnh.
 
-    We can find the point at which gravity begins to overpower the motor by setting $mgl$ equal to $\tau_0 \frac{1+\delta}{2}$. This happens at 
+   Chúng ta có thể tìm điểm mà trọng lực bắt đầu thắng thế động cơ bằng cách đặt $mgl$ bằng $\tau_0 \frac{1+\delta}{2}$. Điều này xảy ra tại
     
     $$\delta=\epsilon/\tau_0 \approx \epsilon/2mgl$$
     
-    Now, from this point onward, the work done by gravity minus the work done by the motor will be positive, causing the mass to slow down. However, this net work should never be larger than the kinetic energy of the mass, $\frac{1}{2}mv^2$. Approximating the torques from gravity and the motor as lines, the net torque is also a line, and we can therefore calculate how much work is done to slow down the mass from the point at which gravity overpowers the motor to ninety degrees. The net torque is 
+   Từ điểm này trở đi, công do trọng lực thực hiện trừ công do động cơ thực hiện sẽ dương, khiến khối lượng giảm tốc. Tuy nhiên, công này không được lớn hơn động năng của khối lượng, $\frac{1}{2}mv^2$. Xấp xỉ các mô men từ trọng lực và động cơ là các đường thẳng, mô men ròng cũng là một đường thẳng, vì vậy ta có thể tính công thực hiện để giảm tốc khối lượng từ điểm mà trọng lực hơn động cơ đến khi đạt chín mươi độ. Mô men xoắn ròng là 
 
     $$mgl-\tau_0 \frac{1+\delta}{2}\approx mgl-2mgl \frac{1+\delta}{2}=-mgl \delta $$
 
-    The area under the graph (i.e. net work) from $\delta=\epsilon/2mgl$ to zero is 
+    Diện tích dưới đồ thị (tức là công ròng) từ $\delta=\epsilon/2mgl$ đến không là 
 
     $$\frac{1}{2} \cdot \epsilon/2mgl \cdot \epsilon/2 = \frac{\epsilon^2}{8mgl} $$
 
-    We can solve for $\epsilon$ by setting this area equal to $\frac{1}{2} mv^2$, resulting in $\epsilon\approx6.6\ Nm$. Therefore, the answer to three significant figures is $\boxed{\tau_0=147.1-6.6=140. \;\mathrm{N\cdot m}}$.
+   Chúng ta có thể giải $\epsilon$ bằng cách đặt diện tích này bằng $\frac{1}{2} mv^2$, dẫn đến $\epsilon\approx6.6\ Nm$. Do đó, đáp án với ba chữ số có nghĩa là $\boxed{\tau_0=147.1-6.6=140. \;\mathrm{N\cdot m}}$.
     
 
 \end{solution}

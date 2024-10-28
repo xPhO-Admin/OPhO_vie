@@ -1,56 +1,51 @@
 \begin{solution}
 
-Here we can use the fact that for a conducting material, the field near 
-the surface is perpendicular to the conductor. First we'll get the charge 
-distribution of a disk from \eqref{ellipsoidCharge}, then make an analogy 
-between electrostatics and gravity.
+Ở đây, chúng ta có thể sử dụng thông tin từ thực tế rằng đối với vật liệu dẫn điện, điện trường gần bề mặt vuông góc với vật dẫn. Đầu tiên, ta sẽ tính phân bố điện tích của một đĩa từ công thức \eqref{ellipsoidCharge}, sau đó thực hiện các phép tính tương tự giữa điện tĩnh và hấp dẫn.
 
-Let $x^2+y^2 = r^2$, $a=b=R$ and $c\rightarrow 0$.
+Cho $x^2+y^2 = r^2$, $a=b=R$ và $c\rightarrow 0$.
 \begin{gather*}
     \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1\\
     \frac{r^2}{R^2}+\frac{z^2}{c^2}=1\\
     \frac{z^2}{c^2} = 1 - \frac{r^2}{R^2} 
 \end{gather*}
-Now $\sigma$ becomes:
+Bây giờ, $\sigma$ trở thành:
 \begin{equation*}
     \sigma = \frac{q}{4\pi R^2c} {\left( \frac{r^2}{R^4}
     + \frac{1 - \frac{r^2}{R^2}}{c^2} \right)} ^ {-1 / 2}
 \end{equation*}
 
-But $c^{-2} \gg a^{-2}$ so:
+Vì $c^{-2} \gg a^{-2}$ nên:
 \begin{gather*}
     \sigma \approx \frac{q}{4\pi R^2c} {\left(\frac{1 - \frac{r^2}{R^2}}{c^2}
     \right)} ^ {-1 / 2} 
 \end{gather*}
 
-And this gives the charge distribution on a charged disk:
+Điều này cho ta phân bố điện tích trên một đĩa tích điện:
 \begin{equation*}
     \sigma = \frac{q}{4\pi R^2} {\left(1 - \frac{r^2}{R^2}
     \right)} ^ {-1 / 2} 
 \end{equation*}
 
-Actually, this is the charge distribution on one of the faces of the disk.
-Because we let $c \rightarrow 0$ we have to multiply this by two(you can 
-check that the integral would give half the charge for the formula above).
+Thực tế, đây là phân bố điện tích trên một trong các mặt của đĩa. 
+Vì ta để  $c \rightarrow 0$ nên phải nhân kết quả này với hai (bạn có thể kiểm tra tích phân sẽ chỉ cho một nửa điện tích với công thức trên).
 \begin{equation*}
     \sigma = \frac{q}{2\pi R^2} {\left(1 - \frac{r^2}{R^2}
     \right)} ^ {-1 / 2} 
 \end{equation*}
 
-The electric field given by a surface charge $\sigma$ near the surface is 
+Điện trường sinh ra bởi điện tích bề mặt $\sigma$ gần bề mặt là
 \[ \mathrm{E} = \frac{\sigma}{2\varepsilon_0} \]
-And the gravitational field near the surface(also Gauss's law):
+Và trường hấp dẫn gần bề mặt (cũng dùng định luật Gauss):
 \[ 2 \mathrm{\Gamma} \mathrm{dS}= 4 \pi \mathrm{G} \rho h \mathrm{dS}\]
 \[ \mathrm{\Gamma} = 2 \pi \mathrm{G} \rho h\]
-So $\rho h$ acts similarly to $\sigma$. ($\Gamma$ is the gravitational 
-acceleration)
+Nên $\rho h$ hoạt động tương tự như $\sigma$. ($\Gamma$ là gia tốc hấp dẫn)
 
 \begin{equation}
     \rho = \rho_0 {\left(1 - \frac{r^2}{R^2} \right)} ^ {-1 / 2} 
     \label{densityDistribution}
 \end{equation}
 
-Now for the numerical part,
+Bây giờ cho phần tính toán số,
 % (1 - 1 / 9) ^ ( - 1 / 2) / (1 - 4 / 9) ^ ( - 1 / 2)
 \begin{equation*}
     \frac{\rho_{\frac{R}{3}}}{\rho_{\frac{2R}{3}}} =
